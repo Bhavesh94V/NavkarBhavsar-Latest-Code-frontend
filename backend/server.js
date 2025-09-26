@@ -39,6 +39,22 @@
 // app.listen(PORT, () => {
 //     console.log(`Server running on port ${PORT}`);
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // backend/server.js
 const express = require("express")
 const cors = require("cors")
@@ -84,6 +100,7 @@ app.use(express.urlencoded({ extended: true })) // Body parser for URL-encoded d
 app.use("/api/query", queryRoutes)
 app.use("/api/contact", contactRoutes)
 app.use("/api/career", careerRoutes) // add /api/career
+
 
 // Basic route for testing
 app.get("/", (req, res) => {
