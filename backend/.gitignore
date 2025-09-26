@@ -3,3 +3,4 @@ backend/config/credentials.json
 
 # backend/.env
 backend/.env
+echo "backend/.env" >>
