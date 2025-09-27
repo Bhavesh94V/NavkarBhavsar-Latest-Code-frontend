@@ -54,8 +54,6 @@
 // module.exports = sendEmail;
 
 
-
-// backend/config/mailer.js
 const { google } = require("googleapis");
 
 const CLIENT_ID = process.env.GMAIL_CLIENT_ID;
@@ -72,23 +70,45 @@ const oAuth2Client = new google.auth.OAuth2(
 
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-const sendEmail = async ({ to, subject, html }) => {
+const sendEmail = async ({ to, subject, html, attachments = [] }) => {
     try {
         const gmail = google.gmail({ version: "v1", auth: oAuth2Client });
+        let boundary = "__MAIL_BOUNDARY__";
 
-        // Gmail API raw email format
-        const rawMessage = Buffer.from(
-            `From: Navkar Bhavsar & Co. <${SENDER_EMAIL}>\r\n` +
-            `To: ${to}\r\n` +
-            `Subject: ${subject}\r\n` +
-            "MIME-Version: 1.0\r\n" +
-            "Content-Type: text/html; charset=UTF-8\r\n\r\n" +
-            `${html}`
-        )
+        let mimeParts = [
+            `From: Navkar Bhavsar & Co. <${SENDER_EMAIL}>`,
+            `To: ${to}`,
+            `Subject: ${subject}`,
+            "MIME-Version: 1.0",
+            `Content-Type: multipart/mixed; boundary="${boundary}"`,
+            "",
+            `--${boundary}`,
+            "Content-Type: text/html; charset=UTF-8",
+            "Content-Transfer-Encoding: 7bit",
+            "",
+            html,
+            ""
+        ];
+
+        attachments.forEach((att) => {
+            mimeParts.push(
+                `--${boundary}`,
+                `Content-Type: ${att.mimeType || "application/octet-stream"}; name="${att.filename}"`,
+                "Content-Transfer-Encoding: base64",
+                `Content-Disposition: attachment; filename="${att.filename}"`,
+                "",
+                Buffer.from(att.content).toString("base64"),
+                ""
+            );
+        });
+
+        mimeParts.push(`--${boundary}--`);
+
+        const rawMessage = Buffer.from(mimeParts.join("\r\n"))
             .toString("base64")
             .replace(/\+/g, "-")
             .replace(/\//g, "_")
-            .replace(/=+$/, ""); // remove padding
+            .replace(/=+$/, "");
 
         const res = await gmail.users.messages.send({
             userId: "me",

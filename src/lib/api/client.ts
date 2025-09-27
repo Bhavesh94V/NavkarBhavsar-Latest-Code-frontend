@@ -13,8 +13,8 @@
         : undefined
 
     // Order of preference: process (when available) → window (if provided) → local dev fallback
-    return fromProcess || fromWindow || "https://navkarbhavsar-latest-code-frontend.onrender.com/api"
-    // return fromProcess || fromWindow || "http://localhost:5000/api"
+    // return fromProcess || fromWindow || "https://navkarbhavsar-latest-code-frontend.onrender.com/api"
+    return fromProcess || fromWindow || "http://localhost:5000/api"
     // return fromProcess || fromWindow || "https://navkar-bhavsar.onrender.com/api"
   }
 
