@@ -211,12 +211,15 @@ const Footer = () => {
               >
                 Terms of Service
               </Link>
-              <Link
-                to='/sitemap'
+              {/* <Link
+                to='/sitemap.xml'
                 className='text-primary-foreground/80 hover:text-accent transition-colors'
               >
                 Sitemap
-              </Link>
+              </Link> */}
+              <a href="/sitemap.xml" className='text-primary-foreground/80 hover:text-accent transition-colors'>
+                Sitemap
+              </a>
             </div>
           </div>
         </div>

@@ -1,60 +1,3 @@
-// // backend/server.js
-// require('dotenv').config(); // Load environment variables from .env file
-// const express = require('express');
-// const cors = require('cors');
-// const connectDB = require('./config/db');
-
-
-// // Import routes
-// const queryRoutes = require('./routes/queryRoutes');
-// const contactRoutes = require('./routes/contactRoutes');
-
-// // Connect to MongoDB
-// connectDB();
-
-// const app = express();
-
-// // Middleware
-// app.use(cors()); // Enable CORS for all origins (adjust for production)
-// app.use(express.json()); // Body parser for JSON data
-// app.use(express.urlencoded({ extended: true })); // Body parser for URL-encoded data
-
-// // Mount routes
-// app.use('/api/query', queryRoutes);
-// app.use('/api/contact', contactRoutes);
-
-// // Basic route for testing
-// app.get('/', (req, res) => {
-//     res.send('API is running...');
-// });
-
-// // Error handling middleware (optional, but good practice)
-// app.use((err, req, res, next) => {
-//     console.error(err.stack);
-//     res.status(500).send('Something broke!');
-// });
-
-// const PORT = process.env.PORT || 5000;
-
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // backend/server.js
 const express = require("express")
 const cors = require("cors")
@@ -77,6 +20,7 @@ const app = express()
 const allowedOrigins = [
     "http://localhost:8080",
     "https://navkarbhavsarandco.com",
+    "https://www.navkarbhavsarandco.com",
 ];
 
 app.use(
