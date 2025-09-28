@@ -31,8 +31,8 @@ const AboutSection = () => {
   }, [])
 
   const stats = [
-    { icon: Award, number: '25+', label: 'Years Experience' },
-    { icon: Users, number: '99+', label: 'Happy Clients' },
+    { icon: Award, number: '7+', label: 'Years Experience' },
+    { icon: Users, number: '500+', label: 'Happy Clients' },
     { icon: TrendingUp, number: '100+', label: 'Projects Completed' },
     { icon: Shield, number: '98%', label: 'Compliance Rate' }
   ]
@@ -47,7 +47,7 @@ const AboutSection = () => {
               <span className='text-muted-foreground font-semibold text-lg'>
                 Empowering Businesses with Expertise
               </span>
-              <h2 className='text-4xl md:text-5xl font-serif font-bold text-foreground mt-4 mb-6'>
+              <h2 className='text-4xl md:text-5xl font-serif font-bold text-primary mt-4 mb-6'>
                 Welcome to Navkar Bhavsar & Co
               </h2>
             </div>

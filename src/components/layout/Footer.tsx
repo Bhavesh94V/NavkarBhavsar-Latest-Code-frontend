@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import loopera from '../../assets/Loopera.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -135,25 +136,50 @@ const Footer = () => {
               <div className='flex items-start space-x-3'>
                 <Phone className='w-5 h-5 text-accent mt-1 flex-shrink-0' />
                 <div className='text-primary-foreground/80 text-sm leading-relaxed'>
-                  +91 - 7567564286, +91 - 8989696886
+                  <a
+                    href="tel:+917567564286"
+                    className="hover:underline"
+                  >
+                    +91 - 7567564286
+                  </a>
+                  ,{" "}
+                  <a
+                    href="tel:+918989696886"
+                    className="hover:underline"
+                  >
+                    +91 - 8989696886
+                  </a>
                 </div>
+
               </div>
 
               {/* Email */}
               <div className='flex items-start space-x-3'>
                 <Mail className='w-5 h-5 text-accent mt-1 flex-shrink-0' />
                 <div className='text-primary-foreground/80 text-sm leading-relaxed'>
-                  Navkar@navkarbhavsarandco.com <br />
-                  Contact@navkarbhavsarandco.com
+                  <a
+                    href="mailto:Navkar@navkarbhavsarandco.com"
+                    className="hover:underline"
+                  >
+                    Navkar@navkarbhavsarandco.com
+                  </a>
+                  <br />
+                  <a
+                    href="mailto:Contact@navkarbhavsarandco.com"
+                    className="hover:underline"
+                  >
+                    Contact@navkarbhavsarandco.com
+                  </a>
                 </div>
+
               </div>
 
               {/* Business Hours */}
               <div className='flex items-start space-x-3'>
                 <Clock className='w-5 h-5 text-accent mt-1 flex-shrink-0' />
                 <div className='text-primary-foreground/80 text-sm leading-relaxed'>
-                  Mon - Fri: 9:00 AM - 7:00 PM <br />
-                  Sat: 9:00 AM - 2:00 PM
+                  Mon - Fri : 10:00 AM - 7:00 PM <br />
+                  Sat - Sun : Closed
                 </div>
               </div>
             </div>
@@ -192,9 +218,20 @@ const Footer = () => {
         <div className='container mx-auto px-6 py-6'>
           <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
             {/* Left Section: Copyright + Powered by */}
-            <div className='text-primary-foreground/80 text-sm mt-4 md:mt-0 text-center md:text-left'>
-              Copyright © {currentYear} Navkar Bhavsar & Co. | Powered by{' '}
-              <span className='font-semibold'>Loopera</span>
+            <div className='flex justify-center flex-col md:flex-row items-center text-primary-foreground/80 text-sm mt-4 md:mt-0 text-center md:text-left'>
+              <p className='mt-1.5'> Copyright © {currentYear} Navkar Bhavsar & Co. | Powered by{' '}</p>
+              <a
+                href="https://looperatech.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold flex items-center"
+              >
+                <img
+                  src={loopera}
+                  className="max-w-28 object-contain hover:scale-105 transition-transform duration-300"
+                  alt="Loopera Logo"
+                />
+              </a>
             </div>
 
             {/* Right Section: Links */}

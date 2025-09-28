@@ -95,7 +95,7 @@ const ClientsSection = () => {
             <span className='text-accent font-semibold text-lg'>
               Our Clients
             </span>
-            <h2 className='text-4xl md:text-5xl font-serif font-bold text-foreground mt-4 mb-6'>
+            <h2 className='text-4xl md:text-5xl font-serif font-bold text-primary mt-4 mb-6'>
               Trusted by Leading Businesses
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
@@ -126,7 +126,7 @@ const ClientsSection = () => {
         {/* Industries We Serve */}
         <div className='mb-20'>
           <div className='animate-on-scroll text-center mb-12'>
-            <h3 className='text-3xl font-serif font-bold text-foreground mb-4'>
+            <h3 className='text-3xl font-serif font-bold text-primary mb-4'>
               Industries We Serve
             </h3>
             <p className='text-muted-foreground max-w-2xl mx-auto'>
@@ -152,7 +152,7 @@ const ClientsSection = () => {
         {/* Testimonials */}
         <div className='mb-16'>
           <div className='animate-on-scroll text-center mb-12'>
-            <h3 className='text-3xl font-serif font-bold text-foreground mb-4'>
+            <h3 className='text-3xl font-serif font-bold text-primary mb-4'>
               What Our Clients Say
             </h3>
             <p className='text-muted-foreground max-w-2xl mx-auto'>

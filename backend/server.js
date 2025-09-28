@@ -21,6 +21,7 @@ const allowedOrigins = [
     "http://localhost:8080",
     "https://navkarbhavsarandco.com",
     "https://www.navkarbhavsarandco.com",
+    "https://navkarbhavsarco.netlify.app/",
 ];
 
 app.use(

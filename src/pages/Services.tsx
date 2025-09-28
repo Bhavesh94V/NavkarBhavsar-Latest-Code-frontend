@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import {
@@ -10,10 +10,24 @@ import {
   Compass,
   DollarSign,
   BookOpen,
-  Briefcase
+  Briefcase,
+  ShieldCheck,
+  RefreshCcw,
+  FileCheck,
+  ClipboardList,
+  FileSearch,
+  UserCheck,
+  Landmark,
+  Building2,
+  FileStack,
+  BriefcaseBusiness,
+  User,
+  Stamp,
+  ClipboardCheck
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
+import { Layer } from 'recharts'
 
 const Services = () => {
   useEffect(() => {
@@ -21,7 +35,9 @@ const Services = () => {
       'Our Services - Navkar Bhavsar & Co. | Chartered Accountant'
   }, [])
 
-  const services = [
+  const [activeTab, setActiveTab] = useState<'CA' | 'CS'>('CA')
+
+  const caServices = [
     {
       icon: Calculator, // Perfect for VAT & Service Tax
       title: 'Gujarat VAT & Service TAX',
@@ -128,6 +144,335 @@ const Services = () => {
     }
   ]
 
+  const csServices = [
+    {
+      icon: FileText,
+      title: 'Company Registration Consultants',
+      description: 'Helping businesses incorporate and comply with MCA requirements.',
+      features: [
+        'Private / Public Ltd Registration',
+        'OPC / LLP Incorporation',
+        'ROC Filings',
+        'Compliance Management'
+      ],
+      link: '/services/company-registration'
+    },
+    {
+      icon: Briefcase,
+      title: 'BSFI Franchise',
+      description: 'Expert advisory and compliance services for BSFI sector franchises.',
+      features: [
+        'Franchise Setup Documentation',
+        'Regulatory Approvals',
+        'Compliance Audit',
+        'Ongoing Advisory'
+      ],
+      link: '/services/bsfi-franchise'
+    },
+    {
+      icon: BookOpen,
+      title: 'Company Law & Secretarial Compliance',
+      description: 'Ensuring businesses stay compliant with company law and secretarial standards.',
+      features: [
+        'Annual Filings with ROC',
+        'Board & General Meetings Compliance',
+        'Registers & Minutes Maintenance',
+        'Secretarial Audit Support'
+      ],
+      link: '/services/company-law-secretarial'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Securities Laws & Compliances',
+      description: 'Comprehensive compliance solutions for securities laws and related regulations.',
+      features: [
+        'SEBI Filings',
+        'Listing Regulations Compliance',
+        'Insider Trading Compliance',
+        'Takeover Code Advisory'
+      ],
+      link: '/services/securities-laws'
+    },
+    {
+      icon: RefreshCcw,
+      title: 'Corporate Restructuring - Merger / Amalgamation',
+      description: 'End-to-end advisory on mergers, acquisitions, and corporate restructuring.',
+      features: [
+        'Scheme Drafting & Approval',
+        'NCLT Process Assistance',
+        'Valuation & Fairness Reports',
+        'Post-merger Integration Support'
+      ],
+      link: '/services/corporate-restructuring'
+    },
+    {
+      icon: TrendingUp,
+      title: 'IPO / Listing / Delisting',
+      description: 'Advisory and compliance support for companies going public or restructuring.',
+      features: [
+        'IPO Advisory & Documentation',
+        'Stock Exchange Liaison',
+        'Due Diligence Reports',
+        'Delisting Procedures'
+      ],
+      link: '/services/ipo-listing-delisting'
+    },
+    {
+      icon: FileCheck,
+      title: 'Legal Documents and Due Diligence',
+      description: 'Drafting, vetting, and compliance check for business-critical legal documents.',
+      features: [
+        'Shareholders & JV Agreements',
+        'Due Diligence Reports',
+        'Drafting MOUs & Contracts',
+        'Regulatory Approvals'
+      ],
+      link: '/services/legal-docs-due-diligence'
+    },
+    {
+      icon: ClipboardList,
+      title: 'Corporate Compliance, Audits & Certifications',
+      description: 'Comprehensive compliance audits and certification services.',
+      features: [
+        'Secretarial Audit',
+        'Corporate Governance Certification',
+        'Annual Compliance Reporting',
+        'Independent Auditor Reports'
+      ],
+      link: '/services/corporate-compliance'
+    },
+    {
+      icon: FileSearch,
+      title: 'Depository Participant Audit',
+      description: 'Audit and compliance support for Depository Participants under SEBI.',
+      features: [
+        'DP Operations Audit',
+        'KYC & Documentation Review',
+        'Compliance Monitoring',
+        'Regulatory Reporting'
+      ],
+      link: '/services/depository-audit'
+    },
+    {
+      icon: UserCheck,
+      title: 'Practising Company Secretary',
+      description: 'Dedicated CS services for corporate compliance and governance.',
+      features: [
+        'Certification Services',
+        'Company Law Advisory',
+        'Secretarial Standards Compliance',
+        'Corporate Governance Reports'
+      ],
+      link: '/services/practising-cs'
+    },
+    {
+      icon: Landmark,
+      title: 'FEMA / RBI Matters – Advice & Support',
+      description: 'Expert advice and compliance support for FEMA and RBI regulations.',
+      features: [
+        'FEMA Compliances',
+        'RBI Approvals',
+        'FDI Reporting',
+        'ECB Filings'
+      ],
+      link: '/services/fema-rbi'
+    },
+    {
+      icon: Building2,
+      title: 'NBFC / Nidhi Company',
+      description: 'Specialized incorporation and compliance services for NBFCs and Nidhi companies.',
+      features: [
+        'NBFC Registration with RBI',
+        'Nidhi Company Incorporation',
+        'Compliance Filings',
+        'Advisory Services'
+      ],
+      link: '/services/nbfc-nidhi'
+    },
+    {
+      icon: Layer,
+      title: 'PVT LTD / OPC / SEC 8 / Limited Company Formation',
+      description: 'Complete support for different types of company incorporation.',
+      features: [
+        'Private Limited Incorporation',
+        'One Person Company Setup',
+        'Section 8 NGO Formation',
+        'Public Limited Incorporation'
+      ],
+      link: '/services/company-formation'
+    },
+    {
+      icon: FileStack,
+      title: 'LLP Registration & Compliance',
+      description: 'Specialized services for LLP incorporation and compliance.',
+      features: [
+        'LLP Agreement Drafting',
+        'ROC Filings',
+        'Annual Returns',
+        'Compliance Advisory'
+      ],
+      link: '/services/llp-registration'
+    },
+    {
+      icon: BriefcaseBusiness,
+      title: 'General Corporate Advisory',
+      description: 'Strategic advice for managing corporate governance and compliance.',
+      features: [
+        'Corporate Governance',
+        'Regulatory Advisory',
+        'Business Structuring',
+        'Policy Compliance'
+      ],
+      link: '/services/general-corporate-advisory'
+    },
+    {
+      icon: User,
+      title: 'HR Payroll and Labour Laws',
+      description: 'Ensuring compliance with labour laws and smooth payroll management.',
+      features: [
+        'Payroll Processing',
+        'PF / ESI Filings',
+        'Labour Law Registrations',
+        'Compliance Audit'
+      ],
+      link: '/services/hr-payroll-labour-laws'
+    },
+    {
+      icon: Stamp,
+      title: 'Trademark',
+      description: 'Trademark registration and compliance advisory.',
+      features: [
+        'Trademark Search & Filing',
+        'Trademark Renewal',
+        'Infringement Advisory',
+        'IPR Compliance'
+      ],
+      link: '/services/trademark'
+    },
+    {
+      icon: ClipboardCheck,
+      title: 'Various Business Registration & License',
+      description: 'Helping businesses obtain mandatory registrations and licenses.',
+      features: [
+        'MSME / Udyam Registration',
+        'Shops & Establishments License',
+        'Professional Tax Registration',
+        'Other Statutory Registrations'
+      ],
+      link: '/services/business-registration'
+    }
+  ]
+
+
+
+
+  // const services = [
+  //   {
+  //     icon: Calculator, // Perfect for VAT & Service Tax
+  //     title: 'Gujarat VAT & Service TAX',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Registration under VAT Act',
+  //       'Classification of Goods',
+  //       'Calculation of interest and penalty',
+  //       'Assessment under VAT Act'
+  //     ],
+  //     link: '/services/gujarat-vat-service-tax'
+  //   },
+  //   {
+  //     icon: TrendingUp, // Tax growth/advisory fit
+  //     title: 'Direct Taxation',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Income Tax, Wealth Tax & TDS Returns Filing',
+  //       'Corporate & Personal Tax Planning',
+  //       'Cross-Border Tax Advisory',
+  //       'Advance Tax & Capital Formation Planning'
+  //     ],
+  //     link: '/services/direct-taxation'
+  //   },
+  //   {
+  //     icon: BarChart2, // Financial analytics/loans
+  //     title: 'Corporate Financial',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Preparation of Budgets',
+  //       'Working Capital Estimation and Management',
+  //       'Break Even Analysis',
+  //       'Product Pricing'
+  //     ],
+  //     link: '/services/corporate-financial'
+  //   },
+  //   {
+  //     icon: FileText, // Process outsourcing docs
+  //     title: 'BPO',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Accounting and MIS reporting',
+  //       'Payroll processing',
+  //       'Regulatory compliances',
+  //       'Secretarial services'
+  //     ],
+  //     link: '/services/bpo'
+  //   },
+  //   {
+  //     icon: Briefcase, // Corporate law/company work
+  //     title: 'Corporate Law',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Inter Corporate Investments.',
+  //       'Corporate restructuring.',
+  //       'Payment of dividend by companies.',
+  //       'Buy back of shares.'
+  //     ],
+  //     link: '/services/corporate-law'
+  //   },
+  //   {
+  //     icon: Shield, // Audit & assurance = protection
+  //     title: 'Auditing Assurance',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Bank Audit',
+  //       'Stock Audit',
+  //       'Certification Work',
+  //       'Risk Based Audit'
+  //     ],
+  //     link: '/services/auditing-assurance'
+  //   },
+  //   {
+  //     icon: Compass, // Guidance / advisory = direction
+  //     title: 'Business Advisory',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Business Valuations',
+  //       'Capital Structures',
+  //       'Design of Organisation Structure.',
+  //       'Project Planning And Control.'
+  //     ],
+  //     link: '/services/advisory'
+  //   },
+  //   {
+  //     icon: BookOpen, // Accounting/bookkeeping = books
+  //     title: 'Accounting Services',
+  //     description:
+  //       'We provide expert and reliable services covering registration, compliance, advisory, audits, planning, and consulting tailored to your business needs.',
+  //     features: [
+  //       'Real Estate Accounting',
+  //       'Forensic Audit Services',
+  //       'Write-up Services',
+  //       'Financial Reporting'
+  //     ],
+  //     link: '/services/accounting-services'
+  //   }
+  // ]
+
   return (
     <div className='min-h-screen bg-background'>
       <Header />
@@ -162,47 +507,109 @@ const Services = () => {
             </p>
           </div>
 
-          <div className='grid lg:grid-cols-3 gap-8'>
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className='card-professional p-8 group hover:shadow-strong transition-all duration-500'
-              >
-                <div className='w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'>
-                  <service.icon className='w-8 h-8 text-primary-foreground' />
+          <div className="flex justify-center gap-4 mb-12">
+            <button
+              onClick={() => setActiveTab('CA')}
+              className={`px-6 py-2 rounded-full font-semibold transition ${activeTab === 'CA' ? 'bg-primary text-white' : 'bg-muted text-foreground'
+                }`}
+            >
+              CA Services
+            </button>
+
+            <button
+              onClick={() => setActiveTab('CS')}
+              className={`px-6 py-2 rounded-full font-semibold transition ${activeTab === 'CS' ? 'bg-primary text-white' : 'bg-muted text-foreground'
+                }`}
+            >
+              CS Services
+            </button>
+          </div>
+
+
+          {/* <div className='grid lg:grid-cols-3 gap-8'>
+            {
+              caServices.map((service, index) => (
+                <div
+                  key={index}
+                  className='card-professional p-8 group hover:shadow-strong transition-all duration-500'
+                >
+                  <div className='w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'>
+                    <service.icon className='w-8 h-8 text-primary-foreground' />
+                  </div>
+
+                  <h3 className='text-xl font-serif font-bold text-foreground mb-4'>
+                    {service.title}
+                  </h3>
+
+                  <p className='text-muted-foreground mb-6 leading-relaxed'>
+                    {service.description}
+                  </p>
+
+                  <ul className='space-y-2 mb-6'>
+                    {service.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className='flex items-center text-sm text-muted-foreground'
+                      >
+                        <div className='w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0'></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    to={service.link}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                  >
+                    <Button className='w-full btn-primary'>Learn More</Button>
+                  </Link>
+                </div>
+              ))}
+          </div> */}
+
+          <div className="grid lg:grid-cols-3 gap-8">
+
+            {(activeTab === 'CA' ? caServices : csServices).map((service, index) => (
+              <div key={index} className="card-professional p-8 group hover:shadow-strong transition-all duration-500 flex flex-col">
+                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
 
-                <h3 className='text-xl font-serif font-bold text-foreground mb-4'>
+                <h3 className="text-xl font-serif font-bold text-foreground mb-4">
                   {service.title}
                 </h3>
 
-                <p className='text-muted-foreground mb-6 leading-relaxed'>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
-                <ul className='space-y-2 mb-6'>
+                <ul className="space-y-2 mb-6 flex-grow">
                   {service.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className='flex items-center text-sm text-muted-foreground'
+                      className="flex items-center text-sm text-muted-foreground"
                     >
-                      <div className='w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0'></div>
+                      <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
+                {/* Button hamesha bottom me fix hoga */}
                 <Link
                   to={service.link}
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: 'smooth' })
-                  }
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="mt-auto"
                 >
-                  <Button className='w-full btn-primary'>Learn More</Button>
+                  <Button className="w-full btn-primary">Learn More</Button>
                 </Link>
               </div>
+
             ))}
           </div>
+
         </div>
       </section>
 
@@ -219,7 +626,7 @@ const Services = () => {
             <div className='text-center'>
               <div className='w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4'>
                 <span className='text-2xl font-bold text-accent-foreground'>
-                  25+
+                  7+
                 </span>
               </div>
               <h3 className='font-semibold text-foreground mb-2'>
@@ -233,7 +640,7 @@ const Services = () => {
             <div className='text-center'>
               <div className='w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4'>
                 <span className='text-2xl font-bold text-primary-foreground'>
-                  99+
+                  500+
                 </span>
               </div>
               <h3 className='font-semibold text-foreground mb-2'>

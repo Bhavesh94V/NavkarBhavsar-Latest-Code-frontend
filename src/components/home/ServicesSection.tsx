@@ -91,7 +91,7 @@ const ServicesSection = () => {
             <span className='text-accent font-semibold text-lg'>
               Our Services
             </span>
-            <h2 className='text-4xl md:text-5xl heading-professional mt-4 mb-6 text-gradient'>
+            <h2 className='text-4xl md:text-5xl heading-professional mt-4 mb-6 text-primary'>
               Comprehensive Financial Solutions
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>

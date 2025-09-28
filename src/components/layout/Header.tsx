@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import logo from '../../assets/logo1.png'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,19 +30,63 @@ const Header = () => {
 
   const isActivePath = (path: string) => location.pathname === path
 
-  const servicesItems = [
+  // const servicesItems = [
+  //   {
+  //     title: 'Gujarat Vat & Service Tax',
+  //     href: '/services/gujarat-vat-service-tax'
+  //   },
+  //   { title: 'Direct Taxation', href: '/services/direct-taxation' },
+  //   { title: 'Corporate Financial', href: '/services/corporate-financial' },
+  //   { title: 'BPO', href: '/services/bpo' },
+  //   { title: 'Corporate Law', href: '/services/corporate-law' },
+  //   { title: 'Auditing & Assurance', href: '/services/auditing-assurance' },
+  //   { title: 'Business Advisory', href: '/services/advisory' },
+  //   { title: 'Accounting Services', href: '/services/accounting-services' }
+  // ]
+
+
+  // CA aur CS services ko categories mein baant diya gaya hai
+  const servicesData = [
     {
-      title: 'Gujarat Vat & Service Tax',
-      href: '/services/gujarat-vat-service-tax'
+      categoryTitle: 'CA Services',
+      services: [
+        { title: 'Gujarat Vat & Service Tax', href: '/services/gujarat-vat-service-tax' },
+        { title: 'Direct Taxation', href: '/services/direct-taxation' },
+        { title: 'Corporate Financial', href: '/services/corporate-financial' },
+        { title: 'BPO', href: '/services/bpo' },
+        { title: 'Corporate Law', href: '/services/corporate-law' },
+        { title: 'Auditing & Assurance', href: '/services/auditing-assurance' },
+        { title: 'Business Advisory', href: '/services/advisory' },
+        { title: 'Accounting Services', href: '/services/accounting-services' }
+      ]
     },
-    { title: 'Direct Taxation', href: '/services/direct-taxation' },
-    { title: 'Corporate Financial', href: '/services/corporate-financial' },
-    { title: 'BPO', href: '/services/bpo' },
-    { title: 'Corporate Law', href: '/services/corporate-law' },
-    { title: 'Auditing & Assurance', href: '/services/auditing-assurance' },
-    { title: 'Business Advisory', href: '/services/advisory' },
-    { title: 'Accounting Services', href: '/services/accounting-services' }
-  ]
+    {
+      categoryTitle: 'CS Services',
+      services: [
+        { title: 'BSFI Franchise', href: '/services/bsfi-franchise' },
+        { title: 'Company Registration Consultants', href: '/services/company-registration-consultants' },
+        { title: 'Company Law & Secretarial Compliance', href: '/services/company-law-secretarial-compliance' },
+        { title: 'Securities Laws & Compliances', href: '/services/securities-laws-compliances' },
+        { title: 'Corporate Restructuring - Merger/Amalgamation', href: '/services/corporate-restructuring' },
+        { title: 'IPO/Listing/Delisting', href: '/services/ipo-listing-delisting' },
+        { title: 'Legal Documents and Due Diligence', href: '/services/legal-documents-due-diligence' },
+        { title: 'Corporate Compliance, Audits & Certifications', href: '/services/corporate-compliance-audits-certifications' },
+        { title: 'Depository Participant Audit', href: '/services/depository-participant-audit' },
+        { title: 'Practising Company Secretary', href: '/services/practising-company-secretary' },
+        { title: 'FEMA / RBI Matters - Advice & Support', href: '/services/fema-rbi-matters' },
+        { title: 'NBFC / Nidhi Company Formation', href: '/services/nbfc-nidhi-company-formation' },
+        { title: 'PVT LTD/OPC/SEC 8 Company Formation', href: '/services/company-formation' },
+        { title: 'LLP Registration & Compliance', href: '/services/llp-registration-compliance' },
+        { title: 'General Corporate Advisory', href: '/services/general-corporate-advisory' },
+        { title: 'HR Payroll and Labour Laws', href: '/services/hr-payroll-labour-laws' },
+        { title: 'Trademark', href: '/services/trademark' },
+        { title: 'Various Business Registration & License', href: '/services/business-registration-license' }
+      ]
+    }
+  ];
+
+  // Helper function (aapke existing code se)
+  // const isExternal = (href) => href.startsWith('http');
 
   const knowledgeBankItems = [
     {
@@ -748,7 +793,7 @@ const Header = () => {
       <nav className='container mx-auto px-6 py-4'>
         <div className='flex items-center justify-between'>
           {/* Logo */}
-          <Link to='/' className='flex items-center space-x-3 group'>
+          {/* <Link to='/' className='flex items-center space-x-3 group'>
             <div className='w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300'>
               <span className='text-primary-foreground font-bold text-xl font-serif'>
                 NB
@@ -762,17 +807,38 @@ const Header = () => {
                 CA & CS
               </p>
             </div>
+          </Link> */}
+
+          <Link to='/' className='flex items-center space-x-3 group'>
+            {/* Image logo box */}
+            <div className='max-w-96 rounded-lg overflow-hidden flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300'>
+              <img
+                src={logo}
+                alt="Navkar Bhavsar Logo"
+                className="w-full h-full scale-95 object-contain"
+              />
+            </div>
+
+            {/* Text */}
+            {/* <div>
+              <h1 className='text-2xl font-serif font-bold text-primary transition-colors duration-300'>
+                Navkar Bhavsar
+              </h1>
+              <p className='text-sm font-medium text-muted-foreground transition-colors duration-300'>
+                CA & CS
+              </p>
+            </div> */}
           </Link>
+
 
           {/* Desktop Navigation */}
           <div className='hidden lg:flex items-center space-x-8'>
             <Link
               to='/about'
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-accent'
-                  : 'text-black hover:text-accent'
-              } ${isActivePath('/about') ? 'text-accent' : ''}`}
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/about') ? 'text-accent' : ''}`}
             >
               About
             </Link>
@@ -780,59 +846,92 @@ const Header = () => {
             {/* Services */}
             <DropdownMenu>
               <DropdownMenuTrigger
-                className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
-                  isScrolled
-                    ? 'text-foreground hover:text-accent'
-                    : 'text-black hover:text-accent'
-                }`}
+                className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${isScrolled
+                  ? 'text-foreground hover:text-accent'
+                  : 'text-black hover:text-accent'
+                  }`}
               >
                 <span>Services</span>
                 <ChevronDown className='w-4 h-4' />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className='w-60 bg-popover border border-border shadow-strong'>
-                {servicesItems.map(s => (
-                  <DropdownMenuItem key={s.title} asChild>
-                    {isExternal(s.href) ? (
-                      <a
-                        href={s.href}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='w-full px-4 py-2 text-sm hover:bg-accent/10 hover:text-accent transition-colors'
-                      >
-                        {s.title}
-                      </a>
-                    ) : (
-                      <Link
-                        to={s.href}
-                        className='w-full px-4 py-2 text-sm hover:bg-accent/10 hover:text-accent transition-colors'
-                      >
-                        {s.title}
-                      </Link>
-                    )}
-                  </DropdownMenuItem>
-                ))}
+              {/* <DropdownMenuContent className='w-60 bg-popover border border-border shadow-strong'>
+                  {servicesItems.map(s => (
+                    <DropdownMenuItem key={s.title} asChild>
+                      {isExternal(s.href) ? (
+                        <a
+                          href={s.href}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='w-full px-4 py-2 text-sm hover:bg-accent/10 hover:text-accent transition-colors'
+                        >
+                          {s.title}
+                        </a>
+                      ) : (
+                        <Link
+                          to={s.href}
+                          className='w-full px-4 py-2 text-sm hover:bg-accent/10 hover:text-accent transition-colors'
+                        >
+                          {s.title}
+                        </Link>
+                      )}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent> */}
+              <DropdownMenuContent className='w-auto bg-popover border border-border shadow-strong'>
+                <div className='flex gap-x-10 p-4'> {/* Main container for columns */}
+
+                  {servicesData.map((category, index) => (
+                    <div key={index} className='flex flex-col'> {/* Each category is a column */}
+
+                      {/* Column Heading */}
+                      <h3 className='text-lg font-bold text-primary mb-2 px-4'>{category.categoryTitle}</h3>
+
+                      {/* List of services in that column */}
+                      {category.services.map(s => (
+                        <DropdownMenuItem key={s.title} asChild className="p-0">
+                          {isExternal(s.href) ? (
+                            <a
+                              href={s.href}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='w-full px-4 py-2 text-sm hover:bg-accent/10 hover:text-accent transition-colors'
+                            >
+                              {s.title}
+                            </a>
+                          ) : (
+                            <Link
+                              to={s.href}
+                              className='w-full px-4 py-2 text-sm hover:bg-accent/10 hover:text-accent transition-colors'
+                            >
+                              {s.title}
+                            </Link>
+                          )}
+                        </DropdownMenuItem>
+                      ))}
+                    </div>
+                  ))}
+
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 
             {/* Clients, Articles */}
             <Link
               to='/clients'
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-accent'
-                  : 'text-black hover:text-accent'
-              } ${isActivePath('/clients') ? 'text-accent' : ''}`}
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/clients') ? 'text-accent' : ''}`}
             >
               Our Clients
             </Link>
 
             <Link
               to='/articles'
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-accent'
-                  : 'text-black hover:text-accent'
-              } ${isActivePath('/articles') ? 'text-accent' : ''}`}
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/articles') ? 'text-accent' : ''}`}
             >
               Articles
             </Link>
@@ -956,33 +1055,31 @@ const Header = () => {
             {/* Other links */}
             <Link
               to='/query'
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-accent'
-                  : 'text-black hover:text-accent'
-              } ${isActivePath('/query') ? 'text-accent' : ''}`}
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/query') ? 'text-accent' : ''}`}
             >
               Query
             </Link>
 
             <Link
               to='/careers'
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-accent'
-                  : 'text-black hover:text-accent'
-              } ${isActivePath('/careers') ? 'text-accent' : ''}`}
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/careers') ? 'text-accent' : ''}`}
             >
               Careers
             </Link>
 
-            <DropdownMenu>
+            {/* Admin Mobile menu */}
+            {/* <DropdownMenu>
               <DropdownMenuTrigger
-                className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
-                  isScrolled
+                className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${isScrolled
                     ? 'text-foreground hover:text-accent'
                     : 'text-black hover:text-accent'
-                }`}
+                  }`}
               >
                 <span>Admin</span>
                 <ChevronDown className='w-4 h-4' />
@@ -999,15 +1096,23 @@ const Header = () => {
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
+            <Link
+              to='/blogs'
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/blogs') ? 'text-accent' : ''}`}
+            >
+              Blogs
+            </Link>
 
             <Link
               to='/contact'
-              className={`text-sm font-medium transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-accent'
-                  : 'text-black hover:text-accent'
-              } ${isActivePath('/contact') ? 'text-accent' : ''}`}
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/contact') ? 'text-accent' : ''}`}
             >
               Contact Us
             </Link>
@@ -1017,9 +1122,8 @@ const Header = () => {
           <Button
             variant='ghost'
             size='sm'
-            className={`lg:hidden rounded-md p-2 transition-colors duration-300 ${
-              isMobileMenuOpen ? 'bg-primary text-white' : 'text-foreground'
-            }`}
+            className={`lg:hidden rounded-md p-2 transition-colors duration-300 ${isMobileMenuOpen ? 'bg-primary text-white' : 'text-foreground'
+              }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -1076,11 +1180,17 @@ const Header = () => {
               >
                 Careers
               </Link>
-              <Link
+              {/* <Link
                 to='/admin'
                 className='text-sm font-medium text-foreground hover:text-accent'
               >
                 Admin
+              </Link> */}
+              <Link
+                to='/blogs'
+                className='text-sm font-medium text-foreground hover:text-accent'
+              >
+                Blogs
               </Link>
               <Link
                 to='/contact'

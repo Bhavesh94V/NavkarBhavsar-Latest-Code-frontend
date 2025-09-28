@@ -47,34 +47,34 @@ const About = () => {
 
   const team = [
     {
-      name: 'CS NAVKAR BHAVSAR',
+      name: 'CA VIRAL SHAH',
       position: 'Co-Founder',
-      // experience: '25+ Years',
-      specialization: 'Corporate Finance & Tax Planning',
-      image: img2,
-      qualifications: ['CS', 'CA']
-    },
-    {
-      name: 'CA Viral Shah',
-      position: 'Co-Founder',
-      // experience: '18+ Years',
+      experience: '8+ Years',
       specialization: 'Audit & Assurance Services',
       image: img1,
-      qualifications: ['CS', 'CA']
+      qualifications: ['CS', 'B.COM']
     },
-    // {
-    //   name: 'CA Rajesh Kumar',
-    //   position: 'Partner',
-    //   experience: '15+ Years',
-    //   specialization: 'Business Advisory & Compliance',
-    //   image: '/api/placeholder/300/300',
-    //   qualifications: ['FCA', 'MBA']
-    // }
+    {
+      name: 'CS NAVKAR BHAVSAR',
+      position: 'Co-Founder',
+      experience: '7+ Years',
+      specialization: 'Corporate Finance & Tax Planning',
+      image: img2,
+      qualifications: ['CS', 'LLB', 'BBA']
+    },
+    {
+      name: 'PURVI UDANKAT',
+      // position: 'Partner',
+      experience: '4+ Years',
+      specialization: 'Business Advisory & Compliance',
+      image: '/api/placeholder/300/300',
+      qualifications: ['CPA', 'B.COM']
+    }
   ]
 
   const stats = [
-    { icon: Award, number: '25+', label: 'Years Experience' },
-    { icon: Users, number: '99+', label: 'Happy Clients' },
+    { icon: Award, number: '7+', label: 'Years Experience' },
+    { icon: Users, number: '500+', label: 'Happy Clients' },
     { icon: TrendingUp, number: '100+', label: 'Projects Completed' },
     { icon: Shield, number: '98%', label: 'Compliance Rate' }
   ]
@@ -106,7 +106,7 @@ const About = () => {
               <span className='text-accent font-semibold text-lg'>
                 Our Story
               </span>
-              <h2 className='text-4xl font-serif font-bold text-foreground mt-4 mb-6'>
+              <h2 className='text-4xl font-serif font-bold text-primary mt-4 mb-6'>
                 Built on Trust, Driven by Excellence
               </h2>
               <div className='space-y-6 text-muted-foreground leading-relaxed'>
@@ -160,7 +160,7 @@ const About = () => {
       <section className='py-20 bg-gradient-secondary'>
         <div className='container mx-auto px-6'>
           <div className='text-center mb-16'>
-            <h2 className='text-4xl font-serif font-bold text-foreground mb-6'>
+            <h2 className='text-4xl font-serif font-bold text-primary mb-6'>
               Our Mission & Vision
             </h2>
           </div>
@@ -210,7 +210,7 @@ const About = () => {
             <span className='text-muted-foreground font-semibold text-lg'>
               Vision Statement
             </span>
-            <h2 className='text-4xl font-serif font-bold text-foreground mt-4 mb-6'>
+            <h2 className='text-4xl font-serif font-bold text-primary mt-4 mb-6'>
               Partnering for Growth, Leading with Integrity
             </h2>
             <p className='text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed'>
@@ -227,7 +227,7 @@ const About = () => {
             {/* <span className='text-muted-foreground font-semibold text-lg'>
               Core Values
             </span> */}
-            <h3 className='text-3xl font-serif font-bold text-foreground mt-4 mb-6'>
+            <h3 className='text-3xl font-serif font-bold text-primary mt-4 mb-6'>
               What Defines Our Work Culture
             </h3>
           </div>
@@ -331,12 +331,12 @@ const About = () => {
             <span className='text-muted-foreground font-semibold text-lg'>
               Our Team
             </span>
-            <h2 className='text-4xl font-serif font-bold text-foreground mt-4 mb-6'>
+            <h2 className='text-4xl font-serif font-bold text-primary mt-4 mb-6'>
               Meet Our Experienced Professionals
             </h2>
           </div>
 
-          <div className='grid lg:grid-cols-2 gap-8'>
+          <div className='grid lg:grid-cols-3 gap-8'>
             {team.map((member, index) => (
               <div
                 key={index}
@@ -364,9 +364,9 @@ const About = () => {
                   <p className='text-accent font-medium mb-2'>
                     {member.position}
                   </p>
-                  {/* <p className='text-muted-foreground text-sm mb-4'>
+                  <p className='text-muted-foreground text-sm mb-4'>
                     {member.experience}
-                  </p> */}
+                  </p>
 
                   <div className='flex flex-wrap gap-2'>
                     {member.qualifications.map((qual, qualIndex) => (

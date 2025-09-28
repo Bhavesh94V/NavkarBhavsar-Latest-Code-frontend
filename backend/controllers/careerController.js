@@ -92,9 +92,9 @@ exports.submitCareer = async (req, res) => {
                 },
             ]
             : []
-        
+
         console.log("[DEBUG] Attachments array:", attachments)
-        
+
         const emailResult = await sendEmail({
             to: process.env.GMAIL_USER,
             subject: `New Career Application from ${firstName} ${lastName}`,

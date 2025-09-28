@@ -62,7 +62,7 @@ const CompanyProfileSection = () => {
             <span className='text-accent font-medium tracking-wide uppercase text-sm'>
               Company Resources
             </span>
-            <h2 className='text-4xl md:text-5xl font-serif font-bold text-foreground mt-4 mb-4'>
+            <h2 className='text-4xl md:text-5xl font-serif font-bold text-primary mt-4 mb-4'>
               Company Profile
             </h2>
             <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>

@@ -88,23 +88,33 @@ const Contact = () => {
       icon: Phone,
       title: 'Phone Numbers',
       details: [
-        // '‪+91 - 79 - 26568636‬ / 26568637',
-        'Mobile: ‪+91 - 7567564286‬, 8989696886',
-        // 'Fax: ‪+91 - 79 - 30613455‬'
+        <a href="tel:+917567564286" className="hover:underline">
+          Mobile: +91 - 7567564286
+        </a>,
+        <a href="tel:+918989696886" className="hover:underline">
+          Mobile: +91 - 8989696886
+        </a>
       ]
     },
     {
       icon: Mail,
       title: 'Email Addresses',
-      details: ['Navkar@navkarbhavsarandco.com', 'Contact@navkarbhavsarandco.com']
+      details: [
+        <a href="mailto:Navkar@navkarbhavsarandco.com" className="hover:underline">
+          Navkar@navkarbhavsarandco.com
+        </a>,
+        <a href="mailto:Contact@navkarbhavsarandco.com" className="hover:underline">
+          Contact@navkarbhavsarandco.com
+        </a>
+      ]
     },
     {
       icon: Clock,
       title: 'Business Hours',
       details: [
-        'Monday - Friday: 9:00 AM - 7:00 PM',
-        'Saturday: 9:00 AM - 2:00 PM',
-        'Sunday: Closed'
+        'Monday - Friday: 10:00 AM - 7:00 PM',
+        'Sat - Sun: Closed',
+        // 'Sunday: Closed'
       ]
     }
   ]
@@ -147,7 +157,7 @@ const Contact = () => {
             <div>
               <div className="mb-8">
                 <span className="text-muted-foreground font-semibold text-lg">Get In Touch</span>
-                <h2 className="text-4xl font-serif font-bold text-foreground mt-4 mb-6">
+                <h2 className="text-4xl font-serif font-bold text-primary mt-4 mb-6">
                   Let's Discuss Your Requirements
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -247,7 +257,7 @@ const Contact = () => {
             <div>
               <div className="mb-8">
                 <span className="text-muted-foreground font-semibold text-lg">Contact Information</span>
-                <h2 className="text-4xl font-serif font-bold text-foreground mt-4 mb-6">Reach Out to Us</h2>
+                <h2 className="text-4xl font-serif font-bold text-primary mt-4 mb-6">Reach Out to Us</h2>
               </div>
 
               <div className="space-y-8">
@@ -291,7 +301,7 @@ const Contact = () => {
       <section className='py-20 bg-gradient-secondary'>
         <div className='container mx-auto px-6'>
           <div className='text-center mb-12'>
-            <h2 className='text-4xl font-serif font-bold text-foreground mb-6'>
+            <h2 className='text-4xl font-serif font-bold text-primary mb-6'>
               Visit Our Office
             </h2>
             <p className='text-sm text-muted-foreground mt-2'>
