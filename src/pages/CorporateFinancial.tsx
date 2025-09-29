@@ -2,6 +2,7 @@ import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import React from 'react'
 import { BarChart2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 type ServiceProps = {
   title: string
@@ -50,6 +51,12 @@ const CorporateFinancial: React.FC = () => {
           <p className='text-lg md:text-xl text-gray-100 leading-relaxed max-w-4xl mx-auto'>
             {service.description}
           </p>
+          <Link
+            to="/services"
+            className="inline-block mt-4 px-6 py-2 bg-white text-gray-900 font-medium rounded-full shadow hover:bg-gray-200 transition"
+          >
+            ← Back to Services
+          </Link>
         </div>
       </section>
 

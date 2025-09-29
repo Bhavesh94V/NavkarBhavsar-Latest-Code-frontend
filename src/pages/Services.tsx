@@ -155,7 +155,7 @@ const Services = () => {
         'ROC Filings',
         'Compliance Management'
       ],
-      link: '/services/company-registration'
+      link: '/services/company-registration-consultants'
     },
     {
       icon: Briefcase,
@@ -179,7 +179,7 @@ const Services = () => {
         'Registers & Minutes Maintenance',
         'Secretarial Audit Support'
       ],
-      link: '/services/company-law-secretarial'
+      link: '/services/company-law-secretarial-compliance'
     },
     {
       icon: ShieldCheck,
@@ -191,7 +191,7 @@ const Services = () => {
         'Insider Trading Compliance',
         'Takeover Code Advisory'
       ],
-      link: '/services/securities-laws'
+      link: '/services/securities-laws-compliances'
     },
     {
       icon: RefreshCcw,
@@ -227,7 +227,7 @@ const Services = () => {
         'Drafting MOUs & Contracts',
         'Regulatory Approvals'
       ],
-      link: '/services/legal-docs-due-diligence'
+      link: '/services/legal-documents-due-diligence'
     },
     {
       icon: ClipboardList,
@@ -239,7 +239,7 @@ const Services = () => {
         'Annual Compliance Reporting',
         'Independent Auditor Reports'
       ],
-      link: '/services/corporate-compliance'
+      link: '/services/corporate-compliance-audits'
     },
     {
       icon: FileSearch,
@@ -251,7 +251,7 @@ const Services = () => {
         'Compliance Monitoring',
         'Regulatory Reporting'
       ],
-      link: '/services/depository-audit'
+      link: '/services/depository-participant-audit'
     },
     {
       icon: UserCheck,
@@ -263,7 +263,7 @@ const Services = () => {
         'Secretarial Standards Compliance',
         'Corporate Governance Reports'
       ],
-      link: '/services/practising-cs'
+      link: '/services/practising-company-secretary'
     },
     {
       icon: Landmark,
@@ -275,7 +275,7 @@ const Services = () => {
         'FDI Reporting',
         'ECB Filings'
       ],
-      link: '/services/fema-rbi'
+      link: '/services/fema-rbi-matters'
     },
     {
       icon: Building2,
@@ -287,7 +287,7 @@ const Services = () => {
         'Compliance Filings',
         'Advisory Services'
       ],
-      link: '/services/nbfc-nidhi'
+      link: '/services/nbfc-nidhi-company-formation'
     },
     {
       icon: Layer,
@@ -311,7 +311,7 @@ const Services = () => {
         'Annual Returns',
         'Compliance Advisory'
       ],
-      link: '/services/llp-registration'
+      link: '/services/llp-registration-compliance'
     },
     {
       icon: BriefcaseBusiness,
@@ -359,9 +359,10 @@ const Services = () => {
         'Professional Tax Registration',
         'Other Statutory Registrations'
       ],
-      link: '/services/business-registration'
+      link: '/services/business-registration-license'
     }
-  ]
+  ];
+
 
 
 

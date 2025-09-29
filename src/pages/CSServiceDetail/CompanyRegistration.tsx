@@ -1,8 +1,9 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import React from 'react'
-import { Calculator } from 'lucide-react'
+import { Building2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet-async";
 
 type ServiceProps = {
   title: string
@@ -18,59 +19,64 @@ type ServiceProps = {
 }
 
 const service: ServiceProps = {
-  title: 'GUJARAT VAT & SERVICE TAX',
+  title: 'COMPANY REGISTRATION CONSULTANTS',
   description:
-    'We provide professional services related to Value Added Tax (VAT) and Service Tax, including registration, compliance, assessments, appeals, refunds, audits, and consultancy on legal and procedural aspects.',
-  icon: Calculator,
+    'Looking for reliable company registration consultants in India? We provide end-to-end support for company incorporation and business registration. From choosing the right structure to filing with the Registrar of Companies (ROC), we ensure a fast, compliant, and stress-free process.',
+  icon: Building2,
   sections: [
     {
-      heading: 'Value Added Tax (VAT)',
+      heading: 'Our Services Include',
       content:
-        'Value Added Tax (VAT) is a tax on value addition and a multi point tax, which is levied at every stage of sale. It is collected at the stage of manufacture/resale and contemplates rebating of tax paid on inputs and purchases.',
+        'We provide comprehensive company registration services covering all major business structures in India.',
       points: [
-        'Registration under VAT Act',
-        'Compiling and calculating the net Output VAT payable after taking benefit of Input VAT Credits',
-        'Classification of Goods',
-        'Calculation of interest and penalty',
-        'Assessment under VAT Act',
-        'Revision and Appeal',
-        'Refund of VAT',
-        'Advice and Consulting on the legal aspects and issues relating to VAT',
-        'Providing clarifications and opinions on issues',
-        'Consultancy on the maintenance of prescribed records',
-        'VAT Audit',
-        'Issue of necessary forms'
+        'Private Limited Company registration',
+        'Public Limited Company registration',
+        'LLP (Limited Liability Partnership) formation',
+        'Section 8 Company (NGO/Non-Profit) registration',
+        'Partnership firm registration',
+        'Drafting and filing of MoA and AoA',
+        'PAN, TAN and GST registration assistance'
       ]
     },
     {
-      heading: 'Service Tax',
+      heading: 'Why Choose Us?',
       content:
-        'The firm provides services on the various aspects of Service Tax matters including applicability of the Act, filing of periodical returns, and representation before authorities in disputes. Service Tax is a central tax introduced through the Finance Act 1994, collected by the Central Excise Department, and is payable on taxable services rendered in India (except J&K).',
+        'Our experienced team ensures complete compliance and transparent processes for your business incorporation.',
       points: [
-        'Registration under Service Tax Act',
-        'Compiling and calculating the net Service Tax payable on output services after taking benefit of CENVAT Credits',
-        'Preparing & filing of Service Tax Returns',
-        'Classification of services',
-        'Calculation of interest and penalty',
-        'Assessment under Service Tax Act',
-        'Revision and Appeal',
-        'Refund of Service Tax',
-        'Advice and Consulting on the legal aspects and issues relating to Service Tax',
-        'Providing updates on significant changes in law',
-        'Providing clarifications and opinions on issues',
-        'Consultancy on the maintenance of prescribed records',
-        'Tax Planning as regards the minimization of Service Tax Liabilities'
+        'Expert guidance to select the best business structure',
+        'Complete support from documentation to ROC approval',
+        '100% compliance with MCA and ROC regulations',
+        'Transparent, time-bound, and cost-effective process'
+      ]
+    },
+    {
+      heading: 'How the Process Works',
+      content:
+        'Our streamlined process ensures quick and efficient company registration with minimal hassle.',
+      points: [
+        'Consultation to understand your business goals',
+        'Collection and verification of documents',
+        'Drafting and filing incorporation documents with MCA',
+        'Issuing Certificate of Incorporation so you can start operations'
       ]
     }
   ]
 }
 
-const GujaratVatAndServiceTax: React.FC = () => {
+const CompanyRegistration: React.FC = () => {
   const Icon = service.icon
 
   return (
     <div className='min-h-screen bg-background flex flex-col'>
+
+      <Helmet>
+        <title>Company Registration Consultants | Private Limited & LLP Registration Services</title>
+        <meta name="description" content="Professional company registration consultants for Private Limited, LLP, Section 8 and Partnership firms. Get hassle-free ROC filing and incorporation support today." />
+      </Helmet>
+
+      
       <Header />
+
 
       {/* Hero Section */}
       <section className='pt-28 pb-20 bg-gradient-hero text-white text-center relative'>
@@ -88,6 +94,8 @@ const GujaratVatAndServiceTax: React.FC = () => {
           >
             ← Back to Services
           </Link>
+
+          
         </div>
       </section>
 
@@ -124,4 +132,4 @@ const GujaratVatAndServiceTax: React.FC = () => {
   )
 }
 
-export default GujaratVatAndServiceTax
+export default CompanyRegistration

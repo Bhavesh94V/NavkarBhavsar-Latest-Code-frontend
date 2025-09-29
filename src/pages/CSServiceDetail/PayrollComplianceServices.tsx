@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header'
 import React from 'react'
 import { Calculator } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 type ServiceProps = {
   title: string
@@ -18,58 +19,60 @@ type ServiceProps = {
 }
 
 const service: ServiceProps = {
-  title: 'GUJARAT VAT & SERVICE TAX',
+  title: 'PAYROLL COMPLIANCE SERVICES',
   description:
-    'We provide professional services related to Value Added Tax (VAT) and Service Tax, including registration, compliance, assessments, appeals, refunds, audits, and consultancy on legal and procedural aspects.',
+    'Payroll compliance is critical for businesses to avoid penalties, maintain employee trust, and adhere to statutory regulations. Our Payroll Compliance services provide end-to-end support in managing salaries, statutory contributions, and filings, ensuring your organization remains fully compliant.',
   icon: Calculator,
   sections: [
     {
-      heading: 'Value Added Tax (VAT)',
+      heading: 'Our Services Include',
       content:
-        'Value Added Tax (VAT) is a tax on value addition and a multi point tax, which is levied at every stage of sale. It is collected at the stage of manufacture/resale and contemplates rebating of tax paid on inputs and purchases.',
+        'We provide comprehensive payroll compliance services ensuring accurate and compliant payroll management.',
       points: [
-        'Registration under VAT Act',
-        'Compiling and calculating the net Output VAT payable after taking benefit of Input VAT Credits',
-        'Classification of Goods',
-        'Calculation of interest and penalty',
-        'Assessment under VAT Act',
-        'Revision and Appeal',
-        'Refund of VAT',
-        'Advice and Consulting on the legal aspects and issues relating to VAT',
-        'Providing clarifications and opinions on issues',
-        'Consultancy on the maintenance of prescribed records',
-        'VAT Audit',
-        'Issue of necessary forms'
+        'Preparation and processing of payroll for employees',
+        'Compliance with PF (Provident Fund), ESI (Employee State Insurance), and other statutory contributions',
+        'TDS calculation, deduction, and filing',
+        'Advisory on salary structuring, allowances, and benefits',
+        'Compliance with GST and other applicable labor laws',
+        'Timely submission of statutory returns and reports',
+        'Support in audits, inspections, and regulatory compliance'
       ]
     },
     {
-      heading: 'Service Tax',
+      heading: 'Why Choose Our Payroll Compliance Services?',
       content:
-        'The firm provides services on the various aspects of Service Tax matters including applicability of the Act, filing of periodical returns, and representation before authorities in disputes. Service Tax is a central tax introduced through the Finance Act 1994, collected by the Central Excise Department, and is payable on taxable services rendered in India (except J&K).',
+        'Our experienced compliance experts provide accurate and reliable payroll management services.',
       points: [
-        'Registration under Service Tax Act',
-        'Compiling and calculating the net Service Tax payable on output services after taking benefit of CENVAT Credits',
-        'Preparing & filing of Service Tax Returns',
-        'Classification of services',
-        'Calculation of interest and penalty',
-        'Assessment under Service Tax Act',
-        'Revision and Appeal',
-        'Refund of Service Tax',
-        'Advice and Consulting on the legal aspects and issues relating to Service Tax',
-        'Providing updates on significant changes in law',
-        'Providing clarifications and opinions on issues',
-        'Consultancy on the maintenance of prescribed records',
-        'Tax Planning as regards the minimization of Service Tax Liabilities'
+        'Experienced Company Secretaries and compliance experts',
+        'End-to-end payroll management with statutory compliance assurance',
+        'Accurate and timely filings to avoid penalties and legal issues',
+        'Confidential, reliable, and professional service'
+      ]
+    },
+    {
+      heading: 'How We Work',
+      content:
+        'Our systematic approach ensures continuous tracking and timely compliance.',
+      points: [
+        'Consultation: Understand your organization\'s payroll structure and requirements',
+        'Implementation: Set up payroll systems and statutory compliance processes',
+        'Execution: Process salaries, deductions, contributions, and filings',
+        'Monitoring: Continuous tracking to ensure timely compliance and reporting'
       ]
     }
   ]
 }
 
-const GujaratVatAndServiceTax: React.FC = () => {
+const PayrollComplianceServices: React.FC = () => {
   const Icon = service.icon
 
   return (
     <div className='min-h-screen bg-background flex flex-col'>
+      <Helmet>
+        <title>Payroll Compliance Services | CS & Corporate Compliance Experts</title>
+        <meta name="description" content="Expert payroll compliance services including statutory filings, PF/ESI/GST/TDS compliance, salary structuring, and HR advisory to ensure legal and regulatory adherence." />
+      </Helmet>
+
       <Header />
 
       {/* Hero Section */}
@@ -124,4 +127,4 @@ const GujaratVatAndServiceTax: React.FC = () => {
   )
 }
 
-export default GujaratVatAndServiceTax
+export default PayrollComplianceServices

@@ -70,7 +70,7 @@ const Header = () => {
         { title: 'Corporate Restructuring - Merger/Amalgamation', href: '/services/corporate-restructuring' },
         { title: 'IPO/Listing/Delisting', href: '/services/ipo-listing-delisting' },
         { title: 'Legal Documents and Due Diligence', href: '/services/legal-documents-due-diligence' },
-        { title: 'Corporate Compliance, Audits & Certifications', href: '/services/corporate-compliance-audits-certifications' },
+        { title: 'Corporate Compliance, Audits & Certifications', href: '/services/corporate-compliance-audits' },
         { title: 'Depository Participant Audit', href: '/services/depository-participant-audit' },
         { title: 'Practising Company Secretary', href: '/services/practising-company-secretary' },
         { title: 'FEMA / RBI Matters - Advice & Support', href: '/services/fema-rbi-matters' },
@@ -82,6 +82,7 @@ const Header = () => {
         { title: 'Trademark', href: '/services/trademark' },
         { title: 'Various Business Registration & License', href: '/services/business-registration-license' }
       ]
+
     }
   ];
 

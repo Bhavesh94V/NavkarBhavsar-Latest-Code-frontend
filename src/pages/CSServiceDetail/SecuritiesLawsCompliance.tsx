@@ -1,8 +1,9 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import React from 'react'
-import { Calculator } from 'lucide-react'
+import { TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 type ServiceProps = {
   title: string
@@ -18,58 +19,60 @@ type ServiceProps = {
 }
 
 const service: ServiceProps = {
-  title: 'GUJARAT VAT & SERVICE TAX',
+  title: 'SECURITIES LAWS & COMPLIANCES',
   description:
-    'We provide professional services related to Value Added Tax (VAT) and Service Tax, including registration, compliance, assessments, appeals, refunds, audits, and consultancy on legal and procedural aspects.',
-  icon: Calculator,
+    'Securities laws are highly regulated and complex. Our Securities Laws & Compliances services help listed and unlisted companies comply with SEBI, stock exchange, and corporate governance requirements, ensuring transparency and investor confidence.',
+  icon: TrendingUp,
   sections: [
     {
-      heading: 'Value Added Tax (VAT)',
+      heading: 'Our Services Include',
       content:
-        'Value Added Tax (VAT) is a tax on value addition and a multi point tax, which is levied at every stage of sale. It is collected at the stage of manufacture/resale and contemplates rebating of tax paid on inputs and purchases.',
+        'We provide comprehensive securities law compliance services for all types of companies.',
       points: [
-        'Registration under VAT Act',
-        'Compiling and calculating the net Output VAT payable after taking benefit of Input VAT Credits',
-        'Classification of Goods',
-        'Calculation of interest and penalty',
-        'Assessment under VAT Act',
-        'Revision and Appeal',
-        'Refund of VAT',
-        'Advice and Consulting on the legal aspects and issues relating to VAT',
-        'Providing clarifications and opinions on issues',
-        'Consultancy on the maintenance of prescribed records',
-        'VAT Audit',
-        'Issue of necessary forms'
+        'SEBI compliance for listed and unlisted companies',
+        'Stock exchange listing support and disclosure management',
+        'Drafting and vetting of offer documents and prospectuses',
+        'Insider trading regulation compliance',
+        'Advisory on takeover code, buybacks, and delisting',
+        'Corporate governance reporting and certifications',
+        'Representation before SEBI and stock exchanges'
       ]
     },
     {
-      heading: 'Service Tax',
+      heading: 'Why Choose Our Securities Compliance Services?',
       content:
-        'The firm provides services on the various aspects of Service Tax matters including applicability of the Act, filing of periodical returns, and representation before authorities in disputes. Service Tax is a central tax introduced through the Finance Act 1994, collected by the Central Excise Department, and is payable on taxable services rendered in India (except J&K).',
+        'Our experienced CS professionals ensure risk-free compliance with securities regulations.',
       points: [
-        'Registration under Service Tax Act',
-        'Compiling and calculating the net Service Tax payable on output services after taking benefit of CENVAT Credits',
-        'Preparing & filing of Service Tax Returns',
-        'Classification of services',
-        'Calculation of interest and penalty',
-        'Assessment under Service Tax Act',
-        'Revision and Appeal',
-        'Refund of Service Tax',
-        'Advice and Consulting on the legal aspects and issues relating to Service Tax',
-        'Providing updates on significant changes in law',
-        'Providing clarifications and opinions on issues',
-        'Consultancy on the maintenance of prescribed records',
-        'Tax Planning as regards the minimization of Service Tax Liabilities'
+        'Experienced CS professionals with expertise in securities law',
+        'End-to-end compliance from listing to ongoing obligations',
+        'Risk-free approach to avoid penalties and regulatory issues',
+        'Trusted by private and public companies'
+      ]
+    },
+    {
+      heading: 'How the Process Works',
+      content:
+        'Our systematic approach ensures continuous compliance with SEBI and stock exchange requirements.',
+      points: [
+        'Consultation on your capital market and listing requirements',
+        'Review of existing compliance and gap analysis',
+        'Drafting, filing, and submission of required documents',
+        'Continuous monitoring and reporting to SEBI and exchanges'
       ]
     }
   ]
 }
 
-const GujaratVatAndServiceTax: React.FC = () => {
+const SecuritiesLawsCompliance: React.FC = () => {
   const Icon = service.icon
 
   return (
     <div className='min-h-screen bg-background flex flex-col'>
+      <Helmet>
+        <title>Securities Laws & Compliances | SEBI & Stock Exchange Compliance Support</title>
+        <meta name="description" content="Professional compliance support for SEBI regulations, stock exchange listing, insider trading laws, takeover code, buybacks and investor disclosures." />
+      </Helmet>
+
       <Header />
 
       {/* Hero Section */}
@@ -124,4 +127,4 @@ const GujaratVatAndServiceTax: React.FC = () => {
   )
 }
 
-export default GujaratVatAndServiceTax
+export default SecuritiesLawsCompliance

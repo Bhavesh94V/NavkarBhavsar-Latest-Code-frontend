@@ -2,6 +2,7 @@ import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import React from 'react'
 import { Shield } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 type ServiceProps = {
   title: string
@@ -72,6 +73,12 @@ const AuditingAssurance: React.FC = () => {
           <h1 className='text-4xl md:text-5xl font-serif font-bold mb-6'>
             {service.title}
           </h1>
+          <Link
+            to="/services"
+            className="inline-block mt-4 px-6 py-2 bg-white text-gray-900 font-medium rounded-full shadow hover:bg-gray-200 transition"
+          >
+            ← Back to Services
+          </Link>
         </div>
       </section>
 
