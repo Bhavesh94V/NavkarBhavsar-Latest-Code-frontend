@@ -702,13 +702,13 @@ const Services = () => {
                   Get Free Consultation
                 </Button>
               </Link>
-              <Link to='/query'>
+              <Link to='/careers'>
                 <Button
                   size='lg'
                   variant='outline'
                   className='border-white text-black hover:bg-white hover:text-primary'
                 >
-                  Send Query
+                  Careers
                 </Button>
               </Link>
             </div>

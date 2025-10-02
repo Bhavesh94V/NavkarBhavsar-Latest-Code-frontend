@@ -3,6 +3,11 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import img1 from '../assets/img1.jpg'
 import img2 from '../assets/img2.jpg'
+import img3 from '../assets/img3.jpg'
+import img4 from '../assets/img4.jpg'
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
+
 import {
   Award,
   Users,
@@ -63,14 +68,42 @@ const About = () => {
       qualifications: ['CS', 'LLB', 'BBA']
     },
     {
-      name: 'PURVI UDANKAT',
+      name: 'Kashish shah',
       // position: 'Partner',
+      experience: '4+ Years',
+      specialization: 'Business Advisory & Compliance',
+      image: img3,
+      qualifications: ['CPA', 'B.COM']
+    },
+    {
+      name: 'NEEL LAKHTARIYA',
+      position: 'Partner',
+      // experience: '8+ Years',
+      specialization: 'Audit & Assurance Services',
+      image: img4,
+      qualifications: ['CS', 'B.COM']
+    },
+    {
+      name: 'CS NAVKAR BHAVSAR',
+      position: 'Partner',
+      experience: '7+ Years',
+      specialization: 'Corporate Finance & Tax Planning',
+      image: img1,
+      qualifications: ['CPA', 'B.Com']
+    },
+    {
+      name: 'PURVI UDANKAT',
+      position: 'Partner',
       experience: '4+ Years',
       specialization: 'Business Advisory & Compliance',
       image: '/api/placeholder/300/300',
       qualifications: ['CPA', 'B.COM']
-    }
+    },
   ]
+
+  useEffect(() => {
+    document.title = 'About Us - Navkar Bhavsar & Co. | Chartered Accountant'
+  }, [])
 
   const stats = [
     { icon: Award, number: '7+', label: 'Years Experience' },
@@ -336,7 +369,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className='grid lg:grid-cols-3 gap-8'>
+          {/* <div className='grid lg:grid-cols-3 gap-8'>
             {team.map((member, index) => (
               <div
                 key={index}
@@ -381,7 +414,85 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
+
+          <section className='py-20'>
+            <div className='container mx-auto px-6'>
+              <div className='text-center mb-16'>
+                <span className='text-muted-foreground font-semibold text-lg'>
+                  Our Experts
+                </span>
+                <h2 className='text-4xl font-serif font-bold text-foreground mt-4 mb-6'>
+                  Professional Team
+                </h2>
+                <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
+                  Our team of qualified professionals brings years of expertise to serve you better.
+                </p>
+              </div>
+
+              <Carousel
+                opts={{
+                  align: 'start',
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                    stopOnInteraction: false,
+                  }),
+                ]}
+                className='w-full'
+              >
+                <CarouselContent className='-ml-4'>
+                  {team.map((member, index) => (
+                    <CarouselItem key={index} className='pl-4 md:basis-1/2 lg:basis-1/3'>
+                      <div className='card-professional overflow-hidden group hover:shadow-strong transition-all duration-500 h-full'>
+                        <div className='relative h-96 overflow-hidden'>
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className='w-full h- object-cover group-hover:scale-105 transition-transform duration-500'
+                          />
+                          <div className='absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-80 transition-opacity duration-300'></div>
+                          <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                            <div className='text-center text-white px-4'>
+                              <p className='font-semibold mb-2'>Specialization</p>
+                              <p className='text-sm'>{member.specialization}</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='p-6'>
+                          <h3 className='text-xl font-serif font-bold text-foreground mb-2'>
+                            {member.name}
+                          </h3>
+                          <p className='text-accent font-medium mb-2'>
+                            {member.position}
+                          </p>
+                          <p className='text-muted-foreground text-sm mb-4'>
+                            {member.experience}
+                          </p>
+
+                          <div className='flex flex-wrap gap-2'>
+                            {member.qualifications.map((qual, qualIndex) => (
+                              <span
+                                key={qualIndex}
+                                className='bg-secondary text-secondary-foreground px-2 py-1 rounded-md text-xs'
+                              >
+                                {qual}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
+          </section>
+
+
         </div>
       </section>
       <Footer />

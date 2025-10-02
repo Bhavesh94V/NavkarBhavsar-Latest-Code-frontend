@@ -11,6 +11,7 @@ import {
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import loopera from '../../assets/Loopera.png'
+import logo2 from '../../assets/logo4.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -35,9 +36,9 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/19oQNzk9x8/', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/cs-navkar-bhavsar-98b44a2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
     { icon: Instagram, href: '#', label: 'Instagram' }
   ]
 
@@ -49,7 +50,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className='lg:col-span-1'>
             <div className='flex items-center space-x-3 mb-6'>
-              <div className='w-12 h-12 bg-accent rounded-lg flex items-center justify-center'>
+              <img
+                src={logo2} // apna logo image path (public folder mai daalo)
+                alt="Navkar Bhavsar & Co. Logo"
+                className="max-w-64 scale-105 object-contain "
+              />
+              {/* <div className='w-12 h-12 bg-accent rounded-lg flex items-center justify-center'>
                 <span className='text-accent-foreground font-bold text-xl font-serif'>
                   B
                 </span>
@@ -61,7 +67,7 @@ const Footer = () => {
                 <p className='text-sm text-muted-foreground'>
                   Chartered Accountant
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <p className='text-primary-foreground/80 leading-relaxed mb-6'>
@@ -75,6 +81,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
                   className='w-10 h-10 bg-primary-foreground/10 hover:bg-accent rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110'
                 >
                   <social.icon className='w-5 h-5' />
@@ -122,15 +129,28 @@ const Footer = () => {
             <h4 className='text-lg font-semibold mb-6'>Contact Information</h4>
             <div className='space-y-4'>
               {/* Address */}
-              <div className='flex items-start space-x-3'>
-                <MapPin className='w-5 h-5 text-accent mt-1 flex-shrink-0' />
-                <div className='text-primary-foreground/80 text-sm leading-relaxed'>
-                  Navkar Bhavsar & Co., <br />
-                  Privillion East Wing, 2nd Floor, <br />
-                  Behind Iskon Temple, SG Highway, <br />
-                  Ahmedabad, Gujarat - 380054
+              <div className='flex flex-col space-y-4'>
+                <div className='flex items-start space-x-3'>
+                  <MapPin className='w-5 h-5 text-accent mt-1 flex-shrink-0' />
+                  <div className='text-primary-foreground/80 text-sm leading-relaxed'>
+                    <span className="font-semibold">Navkar Bhavsar & Co.</span><br />
+                    Privillion East Wing, 2nd Floor, <br />
+                    Behind Iskon Temple, SG Highway, <br />
+                    Ahmedabad, Gujarat - 380054
+                  </div>
+                </div>
+
+                <div className='flex items-start space-x-3'>
+                  <MapPin className='w-5 h-5 text-accent mt-1 flex-shrink-0' />
+                  <div className='text-primary-foreground/80 text-sm leading-relaxed'>
+                    <span className="font-semibold">Duru House</span><br />
+                    Juhu Tara Road, 2nd & 3rd floor, <br />
+                    Duru House, Juhu, <br />
+                    Mumbai, Maharashtra - 400049
+                  </div>
                 </div>
               </div>
+
 
               {/* Mobile */}
               <div className='flex items-start space-x-3'>
@@ -243,7 +263,7 @@ const Footer = () => {
                 Privacy Policy
               </Link>
               <Link
-                to='/terms'
+                to='/TermsAndConditions'
                 className='text-primary-foreground/80 hover:text-accent transition-colors'
               >
                 Terms of Service

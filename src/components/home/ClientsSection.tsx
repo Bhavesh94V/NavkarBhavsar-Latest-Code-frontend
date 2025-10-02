@@ -1,7 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Star, Quote, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
+import clint1 from '../../assets/client1.png'
+import clint2 from '../../assets/client2.png'
+import clint3 from '../../assets/client3.png'
 
 const ClientsSection = () => {
   const sectionRef = useRef<HTMLElement>(null)
@@ -43,33 +46,37 @@ const ClientsSection = () => {
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      position: 'CEO, TechCorp Solutions',
-      company: 'Technology Sector',
-      rating: 5,
-      testimonial:
-        "Navkar Bhavsar & Co. has been instrumental in our company's financial success. Their strategic tax planning saved us significant costs while ensuring complete compliance.",
-      image: '/api/placeholder/80/80'
-    },
-    {
-      name: 'Priya Sharma',
+      name: 'Priyesh Malani',
       position: 'CFO, Global Manufacturing',
       company: 'Manufacturing Industry',
       rating: 5,
       testimonial:
-        'The audit services provided by the team are thorough and professional. They helped us streamline our financial processes and improve operational efficiency.',
-      image: '/api/placeholder/80/80'
+        `Good knowledge demonstrates exceptional knowledge and expertise in company compliance. Their thorough understanding of corporate laws and business regulations ensures clients remain fully compliant at all times. The team is proactive in anticipating regulatory changes and promptly advising practical solutions tailored to each business's unique needs.`,
+      image: clint1
     },
     {
-      name: 'Amit Patel',
+      name: 'CHETAN kumar',
+      position: 'CEO, TechCorp Solutions',
+      company: 'Technology Sector',
+      rating: 5,
+      testimonial:
+        "Navkar Bhavsar provided exceptional business legal compliance services, ensuring our company's regulatory requirements were met. Their expertise, attention to detail, and timely delivery were impressive. I highly recommend their services to any business seeking reliable and knowledgeable compliance support.",
+      image: clint2
+    },
+
+    {
+      name: 'Aalok .p',
       position: 'Founder, Retail Dynamics',
       company: 'Retail Business',
       rating: 5,
       testimonial:
-        'Excellent business advisory services! They guided us through complex regulatory requirements and helped us expand our operations successfully.',
-      image: '/api/placeholder/80/80'
+        'The company has consistently delivered excellent service, demonstrating professional aptitude, a sincere approach to query resolution, and timely execution.',
+      image: clint3
     }
   ]
+
+  const [expanded, setExpanded] = useState(false);
+
 
   const industries = [
     'Information Technology',
@@ -162,49 +169,60 @@ const ClientsSection = () => {
           </div>
 
           <div className='grid lg:grid-cols-3 gap-8'>
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className='animate-on-scroll card-professional p-8 relative group hover:shadow-strong transition-all duration-500'
-              >
-                {/* Quote Icon */}
-                <div className='absolute top-6 right-6 w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center'>
-                  <Quote className='w-4 h-4 text-accent' />
-                </div>
+            {testimonials.map((testimonial, index) => {
+              const [expanded, setExpanded] = useState(false);
+              const text = testimonial.testimonial;
+              const limit = 150; // char limit before truncation
 
-                {/* Rating */}
-                <div className='flex items-center mb-4'>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className='w-5 h-5 fill-accent text-accent' />
-                  ))}
-                </div>
+              return (
+                <div
+                  key={index}
+                  className="animate-on-scroll card-professional p-8 relative group hover:shadow-strong transition-all duration-500"
+                >
+                  <div className="absolute top-6 right-6 w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
+                    <Quote className="w-4 h-4 text-accent" />
+                  </div>
 
-                {/* Testimonial */}
-                <p className='text-muted-foreground leading-relaxed mb-6 italic'>
-                  "{testimonial.testimonial}"
-                </p>
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                    ))}
+                  </div>
 
-                {/* Client Info */}
-                <div className='flex items-center'>
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className='w-12 h-12 rounded-full object-cover mr-4'
-                  />
-                  <div>
-                    <h4 className='font-semibold text-foreground'>
-                      {testimonial.name}
-                    </h4>
-                    <p className='text-sm text-muted-foreground'>
-                      {testimonial.position}
-                    </p>
-                    <p className='text-xs text-muted-foreground'>
-                      {testimonial.company}
-                    </p>
+                  <p className="text-muted-foreground leading-relaxed mb-2 italic">
+                    "
+                    {expanded || text.length <= limit
+                      ? text
+                      : text.slice(0, limit) + "..."}
+                    "
+                    {text.length > limit && (
+                      <button
+                        className="text-accent ms-2 text-sm font-medium hover:underline mb-4"
+                        onClick={() => setExpanded(!expanded)}
+                      >
+                        {expanded ? "Read Less" : "Read More"}
+                      </button>
+                    )}
+                  </p>
+
+
+
+                  <div className="flex items-center mt-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-foreground">
+                        {testimonial.name}
+                      </h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
+
           </div>
         </div>
 

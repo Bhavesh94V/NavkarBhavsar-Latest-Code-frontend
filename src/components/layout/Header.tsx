@@ -927,7 +927,7 @@ const Header = () => {
               Our Clients
             </Link>
 
-            <Link
+            {/* <Link
               to='/articles'
               className={`text-sm font-medium transition-colors duration-300 ${isScrolled
                 ? 'text-foreground hover:text-accent'
@@ -935,6 +935,15 @@ const Header = () => {
                 } ${isActivePath('/articles') ? 'text-accent' : ''}`}
             >
               Articles
+            </Link> */}
+            <Link
+              to='/location'
+              className={`text-sm font-medium transition-colors duration-300 ${isScrolled
+                ? 'text-foreground hover:text-accent'
+                : 'text-black hover:text-accent'
+                } ${isActivePath('/articles') ? 'text-accent' : ''}`}
+            >
+              Find Us
             </Link>
 
             {/* Knowledge Bank with nested (sub) dropdowns */}
@@ -1054,7 +1063,7 @@ const Header = () => {
             </DropdownMenu> */}
 
             {/* Other links */}
-            <Link
+            {/* <Link
               to='/query'
               className={`text-sm font-medium transition-colors duration-300 ${isScrolled
                 ? 'text-foreground hover:text-accent'
@@ -1062,7 +1071,7 @@ const Header = () => {
                 } ${isActivePath('/query') ? 'text-accent' : ''}`}
             >
               Query
-            </Link>
+            </Link> */}
 
             <Link
               to='/careers'
@@ -1157,11 +1166,17 @@ const Header = () => {
               >
                 Our Clients
               </Link>
-              <Link
+              {/* <Link
                 to='/articles'
                 className='text-sm font-medium text-foreground hover:text-accent'
               >
                 Articles
+              </Link> */}
+              <Link
+                to='/location'
+                className='text-sm font-medium text-foreground hover:text-accent'
+              >
+                Find Us
               </Link>
               {/* <Link
                 to='/knowledge'
@@ -1169,12 +1184,12 @@ const Header = () => {
               >
                 Knowledge Bank
               </Link> */}
-              <Link
+              {/* <Link
                 to='/query'
                 className='text-sm font-medium text-foreground hover:text-accent'
               >
                 Query
-              </Link>
+              </Link> */}
               <Link
                 to='/careers'
                 className='text-sm font-medium text-foreground hover:text-accent'

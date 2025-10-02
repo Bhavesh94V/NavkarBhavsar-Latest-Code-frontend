@@ -40,6 +40,8 @@ import NBFCServices from "./pages/CSServiceDetail/NBFCServices";
 import PayrollComplianceServices from "./pages/CSServiceDetail/PayrollComplianceServices";
 import PractisingCompanySecretary from "./pages/CSServiceDetail/PractisingCompanySecretary";
 import TrademarkRegistrationAdvisory from "./pages/CSServiceDetail/TrademarkRegistrationAdvisory";
+import Locations from "./pages/location";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +60,8 @@ const App = () => (
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/query" element={<QueryForm />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/location" element={<Locations />} />
+          <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
 
           <Route path="/services/bsfi-franchise" element={<BFSIFranchiseServices />} />
           <Route path="/services/company-registration-consultants" element={<CompanyRegistration />} />
