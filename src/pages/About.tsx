@@ -70,7 +70,7 @@ const About = () => {
     },
     {
       name: 'Kashish shah',
-      // position: 'Partner',
+      position: 'Partner',
       experience: '4+ Years',
       specialization: 'Business Advisory & Compliance',
       image: img3,
@@ -84,14 +84,14 @@ const About = () => {
       image: img4,
       qualifications: ['CS', 'B.COM']
     },
-    {
-      name: 'CS NAVKAR BHAVSAR',
-      position: 'Partner',
-      experience: '7+ Years',
-      specialization: 'Corporate Finance & Tax Planning',
-      image: img1,
-      qualifications: ['CPA', 'B.Com']
-    },
+    // {
+    //   name: 'CS NAVKAR BHAVSAR',
+    //   position: 'Partner',
+    //   experience: '7+ Years',
+    //   specialization: 'Corporate Finance & Tax Planning',
+    //   image: img1,
+    //   qualifications: ['CPA', 'B.Com']
+    // },
     {
       name: 'PURVI UDANKAT',
       position: 'Partner',
@@ -145,28 +145,25 @@ const About = () => {
               </h2>
               <div className='space-y-6 text-muted-foreground leading-relaxed'>
                 <p>
-                  Established in 2018 by CA Navkar Bhavsar, our firm was founded
-                  with a clear vision – to deliver reliable and comprehensive
-                  financial solutions that help businesses and individuals grow
-                  with confidence. From a modest beginning, we have evolved into
-                  a trusted name in the field of chartered accountancy.
+                  Navkar Bhavsar & Co is a 7-year-old firm engaged in providing Company Secretary (CS) and Chartered Accountant (CA) services, including compliance and business advisory. However, specific private policies for Navkar Bhavsar & Co regarding client confidentiality, data privacy, or internal compliance management are not publicly listed.
                 </p>
                 <p>
-                  Our growth has been driven by integrity, professionalism, and
-                  a client-first approach. Over the years, we have expanded our
-                  expertise across auditing, taxation, corporate advisory, and
-                  compliance, while building a strong team of experienced
-                  professionals committed to excellence.
+                  For a professional firm like Navkar Bhavsar & Co offering CA and CS services, typical private policies would cover:
+                  <br /><br />
+                  • Client information confidentiality and data protection.<br />
+                  • Compliance with legal and regulatory requirements.<br />
+                  • Internal measures for secure handling of documents and communications.<br />
+                  • Ethical standards adherence for client engagements.<br />
+                  • Conflict of interest management.<br />
+                  • Appointment and scope of services clarity.<br />
+                  • Fees and payment terms confidentiality.
                 </p>
                 <p>
-                  Today, Navkar Bhavsar & Co. partners with clients from
-                  startups to established enterprises across industries. With a
-                  multidisciplinary approach and deep industry knowledge, we
-                  provide solutions that address complex financial challenges
-                  and create long-term value.
+                  Since direct private policy documents are not available online for Navkar Bhavsar & Co, a formal private policy for such a firm can be drafted based on best practices in CA/CS firms and legal compliance standards.
                 </p>
               </div>
             </div>
+
 
             <div className='grid grid-cols-2 gap-8'>
               {stats.map((stat, index) => (

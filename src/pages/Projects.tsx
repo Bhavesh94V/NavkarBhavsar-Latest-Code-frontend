@@ -3,6 +3,9 @@ import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import pro1 from '../assets/projects/pro1.png'
+import pro3 from '../assets/projects/automation.jpg'
+
 
 const Projects = () => {
     const [expandedProjects, setExpandedProjects] = useState<Set<number>>(new Set())
@@ -26,6 +29,16 @@ const Projects = () => {
 
     const allProjects = [
         {
+            title: 'Tax Compliance Portal — Globuz',
+            description: 'A full-featured FinTech platform developed for Globuz to simplify tax filing and compliance management. The portal automates the entire tax process—from data collection to final submission—ensuring accuracy, efficiency, and real-time compliance updates for businesses.',
+            category: 'FinTech',
+            image: pro1,
+            link: 'https://globuz.in/',
+            stats: { clients: '500+', completion: '98%' },
+            year: '2025'
+        },
+
+        {
             title: 'Tax Compliance Portal',
             description: 'Comprehensive digital solution for tax filing and compliance management. Our cutting-edge platform streamlines the entire tax process, from data collection to submission, ensuring accuracy and efficiency. With real-time updates and automated calculations, businesses can stay compliant effortlessly.',
             category: 'FinTech',
@@ -38,7 +51,7 @@ const Projects = () => {
             title: 'Corporate Governance System',
             description: 'End-to-end governance and compliance tracking for enterprises. This comprehensive system helps organizations maintain transparency, manage board meetings, handle regulatory filings, and ensure adherence to corporate governance standards across all departments.',
             category: 'Enterprise',
-            image: '/placeholder.svg',
+            image: pro3,
             link: 'https://example.com/project2',
             stats: { clients: '200+', completion: '95%' },
             year: '2024'
@@ -97,15 +110,6 @@ const Projects = () => {
             stats: { clients: '700+', completion: '98%' },
             year: '2023'
         },
-        {
-            title: 'Business Intelligence Dashboard',
-            description: 'Real-time financial analytics and reporting dashboard for decision makers. Visualizes key metrics, trends, and forecasts with interactive charts and customizable reports.',
-            category: 'Technology',
-            image: '/placeholder.svg',
-            link: 'https://example.com/project9',
-            stats: { clients: '400+', completion: '95%' },
-            year: '2024'
-        }
     ]
 
     const categories = ['All', 'FinTech', 'Enterprise', 'Technology']
@@ -148,8 +152,8 @@ const Projects = () => {
                                 key={category}
                                 onClick={() => setFilterCategory(category)}
                                 className={`px-4 py-1 rounded-full font-semibold transition-all ${filterCategory === category
-                                        ? 'bg-primary text-primary-foreground shadow-lg scale-105'
-                                        : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                                    ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
                                     }`}
                             >
                                 {category}
@@ -196,7 +200,7 @@ const Projects = () => {
                                                 alt={project.title}
                                                 className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700'
                                             />
-                                            <div className='absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent'></div>
+                                            <div className='absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent'></div>
                                             <div className='absolute top-4 left-4'>
                                                 <span className='bg-background/80 backdrop-blur-sm text-foreground px-3 py-1 rounded-full text-xs font-semibold'>
                                                     {project.year}

@@ -1,6 +1,8 @@
 import { ExternalLink } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import pro1 from '../assets/projects/pro1.png'
+import pro3 from '../assets/projects/automation.jpg'
 
 export default function ProjectSection() {
 
@@ -24,26 +26,28 @@ export default function ProjectSection() {
 
     const projects = [
         {
+            title: 'Tax Compliance Portal - Globuz',
+            description: 'A full-featured FinTech platform developed for Globuz to simplify tax filing and compliance management. The portal automates the entire tax process—from data collection to final submission—ensuring accuracy, efficiency, and real-time compliance updates for businesses.',
+            category: 'FinTech',
+            image: pro1,
+            link: 'https://globuz.in/',
+            stats: { clients: '500+', completion: '98%' },
+            // year: '2025'
+        },
+        {
             title: 'Tax Compliance Portal',
             description: 'Comprehensive digital solution for tax filing and compliance management. Our cutting-edge platform streamlines the entire tax process, from data collection to submission, ensuring accuracy and efficiency. With real-time updates and automated calculations, businesses can stay compliant effortlessly.',
             category: 'FinTech',
-            image: '/placeholder.svg',
+            image: 'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
             link: 'https://example.com/project1',
-            stats: { clients: '500+', completion: '98%' }
-        },
-        {
-            title: 'Corporate Governance System',
-            description: 'End-to-end governance and compliance tracking for enterprises. This comprehensive system helps organizations maintain transparency, manage board meetings, handle regulatory filings, and ensure adherence to corporate governance standards across all departments.',
-            category: 'Enterprise',
-            image: '/placeholder.svg',
-            link: 'https://example.com/project2',
-            stats: { clients: '200+', completion: '95%' }
+            stats: { clients: '500+', completion: '98%' },
+            // year: '2024'
         },
         {
             title: 'Audit Automation Suite',
             description: 'AI-powered audit workflows and reporting system that revolutionizes traditional auditing processes. Our suite leverages machine learning to identify patterns, detect anomalies, and generate comprehensive reports, reducing manual effort while improving accuracy and insights.',
             category: 'Technology',
-            image: '/placeholder.svg',
+            image: pro3,
             link: 'https://example.com/project3',
             stats: { clients: '350+', completion: '97%' }
         }

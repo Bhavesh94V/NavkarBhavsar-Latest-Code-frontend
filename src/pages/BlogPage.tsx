@@ -4,121 +4,122 @@ import Footer from '@/components/layout/Footer'
 import { Link } from 'react-router-dom';
 
 // --- DUMMY DATA ---
-// Aap isko apne API ya CMS se replace kar sakte hain.
 const blogPosts = [
     {
-        id: 1,
-        slug: 'gst-compliance-changes-2025',
-        title: '5 Major GST Compliance Changes in 2025',
-        excerpt: 'The GST portal has introduced several new features and compliance rules in 2025. Learn how they can impact your business.',
-        content: {
-            para1: "In 2025, GST compliance is undergoing significant changes. Businesses must prepare for a revamped e-invoicing system, modified input tax credit rules, and enhanced scrutiny of returns. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "These changes are designed to improve transparency and reduce tax evasion but will require companies to adapt their internal accounting systems. Practical preparation, including staff training and updated software, will help businesses stay compliant. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 1,
+        "slug": "gst-compliance-changes-2025",
+        "title": "5 Major GST Compliance Changes in 2025",
+        "excerpt": "The GST portal has introduced several new features and compliance rules in 2025. Learn how they can impact your business.",
+        "content": {
+            "para1": "In 2025, GST compliance is undergoing significant changes. Businesses must prepare for a revamped e-invoicing system that mandates the generation of e-invoices for all B2B transactions, regardless of turnover. This move aims to curb tax evasion and bring more businesses into the formal economy. Additionally, the Input Tax Credit (ITC) rules have been modified, with stricter verification processes to prevent fraudulent claims. The concept of 'matching' of ITC, where the credit is only available if the supplier has filed their returns and paid the tax, is now being enforced more rigorously. This means businesses will have to be more diligent in choosing their vendors and ensuring their compliance. Furthermore, there is enhanced scrutiny of returns through AI-powered analytics, which can flag discrepancies in real-time. This will require businesses to maintain immaculate records and ensure the accuracy of their filings.",
+            "para2": "These changes are designed to improve transparency and reduce tax evasion but will require companies to adapt their internal accounting systems. Practical preparation, including staff training and updated software, will be crucial for businesses to stay compliant. Companies should consider investing in automated GST compliance software that can integrate with their existing ERP systems to streamline the process of e-invoicing, ITC reconciliation, and return filing. Regular training sessions for the finance and accounting teams on the latest GST amendments will also be essential to avoid costly errors and penalties. Proactive measures, such as conducting periodic internal audits of GST data, can help in identifying and rectifying any compliance gaps before they are flagged by the tax authorities. In essence, a proactive and technology-driven approach will be the key to navigating the evolving GST landscape in 2025 and beyond."
         },
-        imageUrl: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg',
-        category: 'Taxation',
-        author: 'Riya Sharma',
-        date: 'Sep 22, 2025',
+        "imageUrl": "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg",
+        "category": "Taxation",
+        "author": "Riya Sharma",
+        "date": "Sep 22, 2025"
     },
     {
-        id: 2,
-        slug: 'choosing-right-business-structure',
-        title: 'Choosing the Right Business Structure: Proprietorship, LLP, or Pvt. Ltd.?',
-        excerpt: 'Selecting the right legal structure is crucial for your startup’s success. Here is a detailed breakdown of the pros and cons.',
-        content: {
-            para1: "The choice of business structure has a direct impact on taxation, liability, and scalability. Proprietorships are simple but risky due to unlimited liability. LLPs provide flexibility with limited liability, while Private Limited Companies attract investors and allow for rapid growth.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "Entrepreneurs should evaluate their business goals, risk appetite, and compliance capacity before finalizing the structure. A well-chosen structure can save costs and create opportunities for expansion.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 2,
+        "slug": "choosing-right-business-structure",
+        "title": "Choosing the Right Business Structure: Proprietorship, LLP, or Pvt. Ltd.?",
+        "excerpt": "Selecting the right legal structure is crucial for your startup’s success. Here is a detailed breakdown of the pros and cons.",
+        "content": {
+            "para1": "The choice of business structure has a direct impact on taxation, liability, and scalability. A Sole Proprietorship is the simplest to set up, with minimal compliance requirements, making it ideal for small businesses and individual entrepreneurs. However, the biggest drawback is the unlimited liability, which means the owner's personal assets are at risk in case of business debts. A Limited Liability Partnership (LLP) offers a middle ground, providing the flexibility of a partnership with the benefit of limited liability for the partners. This structure is suitable for professional services firms and businesses with multiple partners who want to protect their personal assets. A Private Limited Company is a more formal and regulated structure, offering limited liability to its shareholders and a separate legal identity. This is the preferred structure for startups looking to raise funding from venture capitalists and angel investors, as it allows for easy transfer of shares and offers a clear ownership structure.",
+            "para2": "Entrepreneurs should evaluate their business goals, risk appetite, and compliance capacity before finalizing the structure. If you are starting small and want to test a business idea with minimal investment, a proprietorship might be the best choice. However, if you are planning to build a scalable business with external funding, a private limited company is the way to go. An LLP is a good option if you are in a professional service and want to have a partnership with limited liability. A well-chosen structure can not only save costs in the long run but also create opportunities for expansion. It's also important to consider the compliance costs associated with each structure. While a proprietorship has minimal compliance, an LLP and a private limited company have annual filing requirements with the Ministry of Corporate Affairs. Therefore, a thorough cost-benefit analysis is essential before making a final decision."
         },
-        imageUrl: 'https://images.pexels.com/photos/259006/pexels-photo-259006.jpeg',
-        category: 'Corporate Law',
-        author: 'Amit Singh',
-        date: 'Sep 18, 2025',
+        "imageUrl": "https://images.pexels.com/photos/259006/pexels-photo-259006.jpeg",
+        "category": "Corporate Law",
+        "author": "Amit Singh",
+        "date": "Sep 18, 2025"
     },
     {
-        id: 3,
-        slug: 'importance-of-internal-audit',
-        title: 'Internal Audit: Expense or Essential Investment?',
-        excerpt: 'A strong internal audit system protects your business from risks and improves efficiency.',
-        content: {
-            para1: "Many businesses view internal audits as an unnecessary cost, but in reality, they are a safeguard against financial mismanagement and fraud. Audits bring credibility to financial reporting and enhance operational efficiency.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "Establishing a robust internal audit framework helps identify gaps early, reduces compliance risks, and builds investor confidence. For growing companies, it is an investment that pays back many times over.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 3,
+        "slug": "importance-of-internal-audit",
+        "title": "Internal Audit: Expense or Essential Investment?",
+        "excerpt": "A strong internal audit system protects your business from risks and improves efficiency.",
+        "content": {
+            "para1": "Many businesses view internal audits as an unnecessary cost, but in reality, they are a safeguard against financial mismanagement and fraud. An effective internal audit function helps in evaluating and improving the effectiveness of risk management, control, and governance processes. It provides an independent and objective assurance that the organization's operations are functioning as intended. Internal auditors can identify weaknesses in internal controls and recommend corrective actions to mitigate risks. They also play a crucial role in ensuring compliance with laws, regulations, and internal policies. Furthermore, audits bring credibility to financial reporting, which is essential for building trust with stakeholders, including investors, lenders, and customers. By identifying operational inefficiencies and suggesting improvements, internal audits can also contribute to cost savings and enhanced productivity.",
+            "para2": "Establishing a robust internal audit framework helps identify gaps early, reduces compliance risks, and builds investor confidence. For growing companies, it is an investment that pays back many times over. A well-structured internal audit plan should be aligned with the organization's strategic objectives and should focus on high-risk areas. The scope of internal audits can extend beyond financial controls to include operational processes, IT systems, and compliance with ethical standards. The findings and recommendations of the internal audit should be reported to the audit committee and senior management to ensure that corrective actions are implemented in a timely manner. In today's dynamic business environment, where risks are constantly evolving, a proactive and risk-based internal audit function is not just a best practice but a necessity for sustainable growth and corporate governance."
         },
-        imageUrl: 'https://images.pexels.com/photos/518244/pexels-photo-518244.jpeg',
-        category: 'Auditing',
-        author: 'Priya Desai',
-        date: 'Sep 15, 2025',
+        "imageUrl": "https://images.pexels.com/photos/518244/pexels-photo-518244.jpeg",
+        "category": "Auditing",
+        "author": "Priya Desai",
+        "date": "Sep 15, 2025"
     },
     {
-        id: 4,
-        slug: 'fema-guidelines-for-startups',
-        title: 'FEMA Guidelines for Startups: Simplifying Foreign Investment',
-        excerpt: 'New FEMA rules have made foreign funding easier for startups. Here’s what you need to know.',
-        content: {
-            para1: "Startups seeking foreign investment must comply with FEMA (Foreign Exchange Management Act) guidelines. Recent changes have simplified the process, making it faster and less restrictive.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "While the new norms are business-friendly, compliance checks remain critical. Startups must maintain proper records and adhere to RBI reporting requirements to avoid penalties.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 4,
+        "slug": "fema-guidelines-for-startups",
+        "title": "FEMA Guidelines for Startups: Simplifying Foreign Investment",
+        "excerpt": "New FEMA rules have made foreign funding easier for startups. Here’s what you need to know.",
+        "content": {
+            "para1": "Startups seeking foreign investment must comply with the Foreign Exchange Management Act (FEMA) guidelines, which regulate the flow of foreign exchange in India. Recent changes have simplified the process, making it faster and less restrictive for startups to raise capital from foreign investors. The introduction of the 'Startup India' initiative has led to several relaxations in FEMA regulations, such as allowing startups to raise up to a certain limit in foreign currency through convertible notes, which are a popular instrument for early-stage funding. Additionally, the process for reporting foreign direct investment (FDI) has been streamlined through the introduction of a single master form. These changes are aimed at creating a more favorable environment for foreign investment in Indian startups and promoting innovation and entrepreneurship in the country.",
+            "para2": "While the new norms are business-friendly, compliance checks remain critical. Startups must maintain proper records of all foreign investments and adhere to the reporting requirements of the Reserve Bank of India (RBI) to avoid penalties. It is essential to ensure that the foreign investment is received through proper banking channels and that the pricing guidelines for the issuance of shares to foreign investors are followed. Startups should also be mindful of the sectoral caps and other conditions applicable to foreign investment in their specific industry. Seeking professional advice from legal and financial experts who specialize in FEMA compliance is highly recommended to navigate the complexities of the regulations and ensure a smooth fundraising process. Proper compliance not only helps in avoiding legal troubles but also builds credibility with foreign investors, paving the way for future funding rounds."
         },
-        imageUrl: 'https://images.pexels.com/photos/653429/pexels-photo-653429.jpeg',
-        category: 'CS Services',
-        author: 'Mohan Kumar',
-        date: 'Sep 12, 2025',
+        "imageUrl": "https://images.pexels.com/photos/653429/pexels-photo-653429.jpeg",
+        "category": "CS Services",
+        "author": "Mohan Kumar",
+        "date": "Sep 12, 2025"
     },
     {
-        id: 5,
-        slug: 'ipo-listing-process-demystified',
-        title: 'IPO Listing Process: From Idea to Stock Market',
-        excerpt: 'Taking a company public involves multiple steps. Here’s a simplified breakdown.',
-        content: {
-            para1: "An IPO (Initial Public Offering) is a complex process that transforms a private company into a publicly listed entity. It involves preparation of financial statements, SEBI approval, appointing underwriters, and drafting the prospectus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "While the journey can be lengthy, listing provides access to larger capital, enhances brand visibility, and creates liquidity for shareholders. Companies should assess readiness before initiating the IPO process.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 5,
+        "slug": "ipo-listing-process-demystified",
+        "title": "IPO Listing Process: From Idea to Stock Market",
+        "excerpt": "Taking a company public involves multiple steps. Here’s a simplified breakdown.",
+        "content": {
+            "para1": "An Initial Public Offering (IPO) is a complex and transformative process that turns a private company into a publicly listed entity, allowing it to raise capital from the public. The journey to an IPO involves several key stages. The first step is the preparation of detailed financial statements that are audited and compliant with the regulations of the Securities and Exchange Board of India (SEBI). The company then needs to appoint merchant bankers or underwriters who will manage the IPO process. A crucial part of the process is the drafting of the Draft Red Herring Prospectus (DRHP), which is a comprehensive document containing all the necessary information about the company's business, financials, and the IPO. The DRHP is then filed with SEBI for its approval. This is a rigorous process that involves multiple rounds of queries and clarifications from the regulator.",
+            "para2": "While the journey can be lengthy and demanding, a successful IPO provides access to a larger pool of capital for growth and expansion, enhances the company's brand visibility and credibility, and creates liquidity for its existing shareholders. Once SEBI approves the DRHP, the company, in consultation with the merchant bankers, decides the price band for the shares and the dates for the IPO. The IPO is then opened to the public for subscription. After the successful completion of the IPO, the company's shares are listed on the stock exchanges, and trading begins. It is important for companies to assess their readiness for an IPO, which includes having a strong management team, a proven track record of financial performance, and a clear growth strategy, before embarking on this journey."
         },
-        imageUrl: 'https://images.pexels.com/photos/90333/pexels-photo-90333.jpeg',
-        category: 'Corporate Finance',
-        author: 'Anjali Verma',
-        date: 'Sep 10, 2025',
+        "imageUrl": "https://images.pexels.com/photos/90333/pexels-photo-90333.jpeg",
+        "category": "Corporate Finance",
+        "author": "Anjali Verma",
+        "date": "Sep 10, 2025"
     },
     {
-        id: 6,
-        slug: 'hr-payroll-compliance',
-        title: 'HR & Payroll Compliance: Small Mistakes, Big Penalties',
-        excerpt: 'Managing PF, ESIC, and labor laws is crucial to avoid legal trouble.',
-        content: {
-            para1: "HR and payroll compliance is a vital aspect of running a business. Non-compliance with PF, ESIC, and labor laws can attract hefty penalties and damage company reputation.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "Businesses must regularly update their compliance processes, maintain accurate records, and invest in payroll software to avoid errors. Compliance not only prevents fines but also improves employee trust.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 6,
+        "slug": "hr-payroll-compliance",
+        "title": "HR & Payroll Compliance: Small Mistakes, Big Penalties",
+        "excerpt": "Managing PF, ESIC, and labor laws is crucial to avoid legal trouble.",
+        "content": {
+            "para1": "HR and payroll compliance is a vital and non-negotiable aspect of running a business in India. Non-compliance with statutory regulations such as the Employees' Provident Fund (PF), Employees' State Insurance (ESIC), and various labor laws can attract hefty penalties, legal action, and significant damage to the company's reputation. The legal landscape for employment is complex and constantly evolving, with numerous central and state laws governing aspects like minimum wages, working hours, overtime, and employee benefits. It is imperative for businesses to stay updated with the latest amendments and ensure that their HR and payroll processes are fully compliant. This includes timely deposit of statutory dues, accurate calculation of contributions, and proper maintenance of records.",
+            "para2": "Businesses must regularly update their compliance processes, maintain accurate and detailed records, and consider investing in robust payroll software to automate calculations and avoid manual errors. Such software can help in generating accurate payroll, managing statutory filings, and ensuring that the company is always compliant with the latest regulations. Beyond just avoiding fines, a strong commitment to compliance also improves employee trust and morale. When employees see that their statutory dues are being handled correctly and on time, it fosters a sense of security and loyalty towards the organization. Therefore, viewing HR and payroll compliance not just as a legal obligation but as a strategic function can contribute to a positive work environment and long-term business success."
         },
-        imageUrl: 'https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg',
-        category: 'CS Services',
-        author: 'Vikram Patel',
-        date: 'Sep 05, 2025',
+        "imageUrl": "https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg",
+        "category": "CS Services",
+        "author": "Vikram Patel",
+        "date": "Sep 05, 2025"
     },
     {
-        id: 7,
-        slug: 'working-capital-management',
-        title: 'Effective Working Capital Management for SMEs',
-        excerpt: 'Learn strategies to manage cash flow and support growth in small and medium businesses.',
-        content: {
-            para1: "For SMEs, working capital management is critical to survival and growth. It involves balancing current assets and liabilities to ensure smooth operations.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "Key strategies include optimizing inventory, improving receivables collection, and negotiating better credit terms with suppliers. Sound working capital management improves liquidity and strengthens financial health.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 7,
+        "slug": "working-capital-management",
+        "title": "Effective Working Capital Management for SMEs",
+        "excerpt": "Learn strategies to manage cash flow and support growth in small and medium businesses.",
+        "content": {
+            "para1": "For Small and Medium Enterprises (SMEs), effective working capital management is the lifeblood that ensures survival and fuels growth. It involves the careful balancing of current assets (like cash, inventory, and accounts receivable) and current liabilities (such as accounts payable and short-term loans) to ensure smooth day-to-day operations. A positive working capital indicates that a company has enough short-term assets to cover its short-term liabilities, which is a key indicator of its financial health and operational efficiency. Poor working capital management can lead to cash flow problems, making it difficult for a business to meet its immediate obligations, such as paying suppliers and employees, even if it is profitable on paper.",
+            "para2": "Key strategies for effective working capital management include optimizing inventory levels to avoid overstocking and carrying costs, improving the collection of accounts receivable by implementing clear credit policies and timely follow-ups, and negotiating better credit terms with suppliers to extend the payment cycle. SMEs can also explore options like invoice discounting and trade credit to manage their cash flow more effectively. By implementing sound working capital management practices, SMEs can improve their liquidity, reduce their reliance on external financing, and strengthen their overall financial health, creating a solid foundation for sustainable growth and long-term success."
         },
-        imageUrl: 'https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg',
-        category: 'Corporate Finance',
-        author: 'Riya Sharma',
-        date: 'Sep 01, 2025',
+        "imageUrl": "https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg",
+        "category": "Corporate Finance",
+        "author": "Riya Sharma",
+        "date": "Sep 01, 2025"
     },
     {
-        id: 8,
-        slug: 'working-capital-management',
-        title: 'Effective Working Capital Management for SMEs',
-        excerpt: 'Learn strategies to manage cash flow and support growth in small and medium businesses.',
-        content: {
-            para1: "For SMEs, working capital management is critical to survival and growth. It involves balancing current assets and liabilities to ensure smooth operations.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet.",
-            para2: "Key strategies include optimizing inventory, improving receivables collection, and negotiating better credit terms with suppliers. Sound working capital management improves liquidity and strengthens financial health.Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aut exercitationem soluta! Sit mollitia harum, porro quasi pariatur quaerat illo, perspiciatis nisi cumque accusantium a, veritatis quisquam minus vero eligendi ut rem autem? Eum sed sapiente dolorum, nobis amet aliquam libero officia repellendus nesciunt maiores praesentium aperiam! Exercitationem aliquam quis quod, nulla velit tempora? Maxime distinctio dolorum repellat dolores illo, perferendis animi, qui corporis beatae nam magnam molestiae! Nemo iure dolor maiores dicta! Sit enim fugiat voluptas dolorem. Perspiciatis reprehenderit sint blanditiis earum nemo, quam illum dicta incidunt quibusdam, recusandae unde quidem, quod nihil obcaecati! Ratione voluptates quisquam dolorem eveniet."
+        "id": 8,
+        "slug": "understanding-due-diligence",
+        "title": "The Critical Role of Due Diligence in Business Transactions",
+        "excerpt": "A deep dive into why thorough due diligence is non-negotiable before any major business decision.",
+        "content": {
+            "para1": "Due diligence is an exhaustive investigation and analysis conducted by a prospective buyer or investor to assess the merits and risks of a potential business transaction, such as a merger, acquisition, or significant investment. This process involves a comprehensive review of the target company's financial records, legal compliance, operational efficiency, and market position. Financial due diligence focuses on verifying the accuracy of financial statements, understanding the company's earnings and cash flows, and identifying any hidden liabilities. Legal due diligence examines contracts, licenses, pending litigations, and compliance with all applicable laws and regulations to uncover any potential legal risks. Operational due diligence assesses the company's internal processes, technology infrastructure, and management team to evaluate its long-term viability and potential for growth.",
+            "para2": "Conducting thorough due diligence is paramount to making informed business decisions and mitigating potential risks. It helps the acquirer or investor to identify any red flags or deal-breakers before committing to the transaction. The findings of the due diligence process can also be used to negotiate a more favorable price and better terms for the deal. Furthermore, it provides valuable insights into the target company's operations, which can be used to plan for a smooth post-merger integration. In essence, due diligence is not just a procedural formality but a critical strategic tool that can significantly impact the success of a business transaction. Skipping or rushing through this process can lead to costly surprises and, in the worst-case scenario, the failure of the entire venture."
         },
-        imageUrl: 'https://images.pexels.com/photos/955400/pexels-photo-955400.jpeg',
-        category: 'Corporate Finance',
-        author: 'Riya Sharma',
-        date: 'Sep 01, 2025',
+        "imageUrl": "https://images.pexels.com/photos/955400/pexels-photo-955400.jpeg",
+        "category": "Corporate Finance",
+        "author": "Riya Sharma",
+        "date": "Sep 01, 2025"
     }
-];
+]
+
+
 
 
 // --- SVG ICONS (Self-contained) ---
