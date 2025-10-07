@@ -2,6 +2,9 @@ import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import React from 'react'
 import { Users } from 'lucide-react'
+import { Phone, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const clients = [
   'Foreign Companies having Subsidiary in India',
@@ -94,6 +97,35 @@ const ClientsPage: React.FC = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
+              Can't Visit Us?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              No worries! Get in touch with us through phone, email, or our contact form.
+              We're always here to help you with your needs.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link to="/contact">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Contact Us
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="tel:+917567564286">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Us
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

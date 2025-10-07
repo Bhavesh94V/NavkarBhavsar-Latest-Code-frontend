@@ -17,6 +17,7 @@ import {
   Eye,
   Heart
 } from 'lucide-react'
+import ProjectSection from './ProjectSection'
 
 const About = () => {
   useEffect(() => {
@@ -144,7 +145,7 @@ const About = () => {
               </h2>
               <div className='space-y-6 text-muted-foreground leading-relaxed'>
                 <p>
-                  Established in 1999 by CA Navkar Bhavsar, our firm was founded
+                  Established in 2018 by CA Navkar Bhavsar, our firm was founded
                   with a clear vision – to deliver reliable and comprehensive
                   financial solutions that help businesses and individuals grow
                   with confidence. From a modest beginning, we have evolved into
@@ -360,14 +361,6 @@ const About = () => {
       {/* Team */}
       <section className='py-20 bg-gradient-secondary'>
         <div className='container mx-auto px-6'>
-          <div className='text-center mb-16'>
-            <span className='text-muted-foreground font-semibold text-lg'>
-              Our Team
-            </span>
-            <h2 className='text-4xl font-serif font-bold text-primary mt-4 mb-6'>
-              Meet Our Experienced Professionals
-            </h2>
-          </div>
 
           {/* <div className='grid lg:grid-cols-3 gap-8'>
             {team.map((member, index) => (
@@ -420,14 +413,11 @@ const About = () => {
             <div className='container mx-auto px-6'>
               <div className='text-center mb-16'>
                 <span className='text-muted-foreground font-semibold text-lg'>
-                  Our Experts
+                  Our Team
                 </span>
-                <h2 className='text-4xl font-serif font-bold text-foreground mt-4 mb-6'>
-                  Professional Team
+                <h2 className='text-4xl font-serif font-bold text-primary mt-4 mb-6'>
+                  Meet Our Experienced Professionals
                 </h2>
-                <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-                  Our team of qualified professionals brings years of expertise to serve you better.
-                </p>
               </div>
 
               <Carousel
@@ -495,6 +485,7 @@ const About = () => {
 
         </div>
       </section>
+      <ProjectSection></ProjectSection>
       <Footer />
     </div>
   )

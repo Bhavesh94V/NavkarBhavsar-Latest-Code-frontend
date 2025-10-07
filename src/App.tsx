@@ -42,6 +42,8 @@ import PractisingCompanySecretary from "./pages/CSServiceDetail/PractisingCompan
 import TrademarkRegistrationAdvisory from "./pages/CSServiceDetail/TrademarkRegistrationAdvisory";
 import Locations from "./pages/location";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import Projects from "./pages/Projects";
+import ScrollToTop from "./ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +53,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop></ScrollToTop>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -62,6 +65,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/location" element={<Locations />} />
           <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+          <Route path="/projects" element={<Projects />} />
 
           <Route path="/services/bsfi-franchise" element={<BFSIFranchiseServices />} />
           <Route path="/services/company-registration-consultants" element={<CompanyRegistration />} />

@@ -11,7 +11,7 @@ import {
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import loopera from '../../assets/Loopera.png'
-import logo2 from '../../assets/logo4.png'
+import logo2 from '../../assets/logo2.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -20,7 +20,10 @@ const Footer = () => {
     { title: 'About Us', href: '/about' },
     { title: 'Our Services', href: '/services' },
     { title: 'Our Clients', href: '/clients' },
-    { title: 'Articles', href: '/articles' },
+    { title: 'Find Us', href: '/clients' },
+    // { title: 'Articles', href: '/articles' },
+    { title: 'Career', href: '/careers' },
+    { title: 'Blog', href: '/blogs' },
     { title: 'Contact Us', href: '/contact' }
   ]
 
@@ -72,7 +75,7 @@ const Footer = () => {
 
             <p className='text-primary-foreground/80 leading-relaxed mb-6'>
               Your trusted partner for comprehensive financial solutions. Over
-              25 years of excellence in chartered accountancy services.
+              7 years of excellence in chartered accountancy services.
             </p>
 
             <div className='flex space-x-4'>
@@ -220,7 +223,7 @@ const Footer = () => {
               <input
                 type='email'
                 placeholder='Enter your email'
-                className='flex-1 px-4 py- bg-primary-foreground/10 border border-primary-foreground/20 rounded-lg text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-accent'
+                className='flex-1 px-4 py-2 md:py-0 bg-primary-foreground/10 border border-primary-foreground/20 rounded-lg text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-accent'
               />
               <Button
                 variant='secondary'
@@ -238,7 +241,7 @@ const Footer = () => {
         <div className='container mx-auto px-6 py-6'>
           <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
             {/* Left Section: Copyright + Powered by */}
-            <div className='flex justify-center flex-col md:flex-row items-center text-primary-foreground/80 text-sm mt-4 md:mt-0 text-center md:text-left'>
+            <div className='flex justify-center flex- md:flex-row items-center text-primary-foreground/80 text-sm mt-4 md:mt-0 text-center md:text-left'>
               <p className='mt-1.5'> Copyright © {currentYear} Navkar Bhavsar & Co. | Powered by{' '}</p>
               <a
                 href="https://looperatech.netlify.app/"

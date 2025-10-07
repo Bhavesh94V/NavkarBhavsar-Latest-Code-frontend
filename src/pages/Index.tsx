@@ -8,6 +8,7 @@ import CompanyProfileSection from '@/components/home/CompanyProfileSection'
 import ClientsSection from '@/components/home/ClientsSection'
 import { useEffect } from 'react'
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection'
+import ProjectSection from './ProjectSection'
 
 const Index = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const Index = () => {
       {/* <WhatsNewSection /> */}
       <CompanyProfileSection />
       <ClientsSection />
+      <ProjectSection></ProjectSection>
       <Footer />
     </div>
   )

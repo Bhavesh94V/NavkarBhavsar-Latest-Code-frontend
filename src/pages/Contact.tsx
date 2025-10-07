@@ -76,12 +76,21 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Office Address',
+      title: 'Office Address ( Ahmedabad )',
       details: [
         'Navkar Bhavsar & Co.',
         'Privillion East Wing, 2nd Floor,',
         'Behind Iskon Temple, SG Highway,',
         'Ahmedabad, Gujarat - 380054'
+      ]
+    },
+    {
+      icon: MapPin,
+      title: 'Office Address ( Mumbai )',
+      details: [
+        'Duru House, Juhu Tara Road,',
+        '2nd & 3rd Floor, Duru House, Juhu,',
+        'Mumbai, Maharashtra - 400049'
       ]
     },
     {
@@ -122,15 +131,17 @@ const Contact = () => {
 
 
   const services = [
-    "Gujarat VAT & Service TAX",
-    "Direct Taxation",
-    "Corporate Financial",
-    "BPO",
-    "Corporate Law",
-    "Auditing Assurance",
-    "Business Advisory",
-    "Accounting Services",
-    "Other",
+    // "Gujarat VAT & Service TAX",
+    // "Direct Taxation",
+    // "Corporate Financial",
+    // "BPO",
+    // "Corporate Law",
+    // "Auditing Assurance",
+    // "Business Advisory",
+    // "Accounting Services",
+    "Chartered Accountant Services (CA)",
+    "Company Secretary Services (CS)",
+    "Other Services",
   ]
 
   return (
@@ -271,9 +282,11 @@ const Contact = () => {
                         <h3 className="font-semibold text-foreground mb-2">{info.title}</h3>
                         <div className="space-y-1">
                           {info.details.map((detail, detailIndex) => (
+
                             <p key={detailIndex} className="text-muted-foreground text-sm">
                               {detail}
                             </p>
+
                           ))}
                         </div>
                       </div>
